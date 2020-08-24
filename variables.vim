@@ -36,5 +36,5 @@ let mapleader = "\<Space>"
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 25
 
-let g:python3_host_prog="/home/harry/.pyenv/shims/python3"
-let g:python_host_prog="/home/harry/.pyenv/shims/python2.7"
+let g:python3_host_prog="$(HOME)/.pyenv/shims/python3"
+let g:python_host_prog="$(HOME)/.pyenv/shims/python2.7"

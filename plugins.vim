@@ -1,6 +1,3 @@
-"python support
-let g:python_host_prog="/usr/bin/python2.7"
-let g:python3_host_prog="$(HOME)/.pyenv/versions/3.6.8/bin/python3"
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'sheerun/vim-polyglot'
@@ -54,6 +51,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline_theme='understated'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
