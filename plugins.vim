@@ -22,6 +22,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
+
+	"markdown note support
+	Plug 'shime/vim-livedown'
+	Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "colorscheme
@@ -69,3 +73,8 @@ let g:airline_symbols.maxlinenr = ' Φ'
 "indentLine
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
+
+"markdown content
+nmap gm :LivedownToggle<CR>
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+					  \ 'syntax': 'markdown', 'ext': '.md'}]
