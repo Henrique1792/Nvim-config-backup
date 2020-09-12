@@ -5,20 +5,20 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
 	"Plug 'vim-syntastic/syntastic'
-    Plug 'ludovicchabant/vim-gutentags'
+	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
-    if has('nvim') || has('patch-8.0.902')
+	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
-    else
+	else
 		Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-    endif
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
+	endif
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 
 	"ale 
 	Plug 'dense-analysis/ale'
 	"airline
-    Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
@@ -36,8 +36,14 @@ let g:signify_sign_add = "▶"
 let g:signify_sign_delete = "✗"
 let g:signify_sign_show_count = 0
 let g:signify_sign_change = "⚠"
-nmap <silent><F5> <ESC>:SignifyDiff<CR>
-nmap <silent><F6> <ESC>:tabclose<CR><ESC>:SignifyEnable<CR>
+"nnoremap <silent><F5> <ESC>:SignifyDiff<CR>
+"nnoremap <silent><F6> <ESC>:tabclose<CR><ESC>:SignifyEnable<CR>
+
+"fugitive
+nnoremap <F5><silent> :Gvdiffsplit!<CR>
+nnoremap <F6><silent> :only<CR><ESC>:SignifyEnable<CR>
+nnoremap gh<silent> :diffget //3
+nnoremap gf<silent> :diffget //2
 
 
 " ale
@@ -58,7 +64,7 @@ let g:airline_theme='understated'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 "let g:airline_section_z = '%3p %l:%c'
 let g:airline_left_sep = ''
@@ -75,6 +81,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
 "markdown content
-nmap gm :LivedownToggle<CR>
+nmap <leader>gm :LivedownToggle<CR>
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-					  \ 'syntax': 'markdown', 'ext': '.md'}]
+			\ 'syntax': 'markdown', 'ext': '.md'}]
