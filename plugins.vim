@@ -26,10 +26,22 @@ call plug#begin('~/.local/share/nvim/plugged')
 	"markdown note support
 	Plug 'shime/vim-livedown'
 	Plug 'vimwiki/vimwiki'
+
+	if has('nvim')
+	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	else
+	  Plug 'Shougo/deoplete.nvim'
+	  Plug 'roxma/nvim-yarp'
+	  Plug 'roxma/vim-hug-neovim-rpc'
+	endif
+
+
 call plug#end()
 
-"colorscheme
-colo wolfpack
+"colorscheme - uncomment for choosing your favorites
+"colo nord
+colo ayu
+"colo wolfpack
 
 "signify
 let g:signify_sign_add = "▶"
@@ -84,3 +96,6 @@ let g:indentLine_showFirstIndentLevel = 1
 nmap <leader>gm :LivedownToggle<CR>
 let g:vimwiki_list = [{'path': '~/vimwiki/',
 			\ 'syntax': 'markdown', 'ext': '.md'}]
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
