@@ -8,12 +8,7 @@ noremap <silent><leader>bd <ESC>:bd<CR>
 vnoremap <silent><leader>y "*ygv"+y
 noremap	 <silent><leader>p "+p
 
-
-
-
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-
-
 
 nmap <silent><F2>  :tabnew<CR>
 nmap <silent><F4>  :tabclose<CR>
@@ -42,3 +37,13 @@ nmap <silent><leader><F8> :let @+=expand("%:p")<CR>
 noremap Zz <c-w>_ \| <c-w>\|
 noremap Zo <c-w>=
 noremap <leader>f <ESC>:Files<CR>
+
+
+"fugitive
+nnoremap <F5><silent> :Gvdiffsplit!<CR>
+nnoremap <F6><silent> :only<CR><ESC>:SignifyEnable<CR>
+nnoremap gh<silent> :diffget //3
+nnoremap gf<silent> :diffget //2
+
+"markdown preview command
+nmap <leader>gm :LivedownToggle<CR>

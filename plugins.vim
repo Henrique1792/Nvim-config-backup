@@ -1,10 +1,13 @@
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
+
 	Plug 'sheerun/vim-polyglot'
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-	"Plug 'vim-syntastic/syntastic'
+
+	Plug 'vim-utils/vim-man'
+
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
 	if has('nvim') || has('patch-8.0.902')
@@ -17,6 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	"ale 
 	Plug 'dense-analysis/ale'
+	
 	"airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -51,11 +55,6 @@ let g:signify_sign_change = "⚠"
 "nnoremap <silent><F5> <ESC>:SignifyDiff<CR>
 "nnoremap <silent><F6> <ESC>:tabclose<CR><ESC>:SignifyEnable<CR>
 
-"fugitive
-nnoremap <F5><silent> :Gvdiffsplit!<CR>
-nnoremap <F6><silent> :only<CR><ESC>:SignifyEnable<CR>
-nnoremap gh<silent> :diffget //3
-nnoremap gf<silent> :diffget //2
 
 
 " ale
@@ -93,7 +92,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
 "markdown content
-nmap <leader>gm :LivedownToggle<CR>
 let g:vimwiki_list = [{'path': '~/vimwiki/',
 			\ 'syntax': 'markdown', 'ext': '.md'}]
 
