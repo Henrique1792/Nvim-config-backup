@@ -40,10 +40,10 @@ noremap <leader>f <ESC>:Files<CR>
 
 
 "fugitive
-nnoremap <F5><silent> :Gvdiffsplit!<CR>
-nnoremap <F6><silent> :only<CR><ESC>:SignifyEnable<CR>
-nnoremap gh<silent> :diffget //3
-nnoremap gf<silent> :diffget //2
+nnoremap <silent><F5> <ESC>:Gvdiffsplit<CR>
+nnoremap <silent><F6> <ESC>:only<CR><ESC>:SignifyEnable<CR>
+nnoremap <silent>gh :diffget //3
+nnoremap <silent>gf :diffget //2
 
 "markdown preview command
 nmap <leader>gm :LivedownToggle<CR>

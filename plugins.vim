@@ -38,7 +38,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	  Plug 'roxma/nvim-yarp'
 	  Plug 'roxma/vim-hug-neovim-rpc'
 	endif
-
+	Plug 'neovim/nvim-lsp'
+	Plug 'Shougo/deoplete-lsp'
 
 call plug#end()
 
@@ -61,9 +62,7 @@ let g:signify_sign_change = "⚠"
 let g:ale_sign_error = '∅'
 let g:ale_sign_warning = 'Δ'
 let g:ale_open_list = 1
-let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_tsserver_autoimport = 1
 let g:ale_list_window_size = 5
 
 
@@ -77,7 +76,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-"let g:airline_section_z = '%3p %l:%c'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 "let g:airline_left_alt_sep = ''
