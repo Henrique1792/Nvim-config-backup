@@ -31,6 +31,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'shime/vim-livedown'
 	Plug 'vimwiki/vimwiki'
 
+	"deoplete configuration
 	if has('nvim')
 	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	else
@@ -53,8 +54,6 @@ let g:signify_sign_add = "▶"
 let g:signify_sign_delete = "✗"
 let g:signify_sign_show_count = 0
 let g:signify_sign_change = "⚠"
-"nnoremap <silent><F5> <ESC>:SignifyDiff<CR>
-"nnoremap <silent><F6> <ESC>:tabclose<CR><ESC>:SignifyEnable<CR>
 
 
 

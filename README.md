@@ -9,4 +9,11 @@ Warning: you may need some configurations before like:
 
 I won't link needed stuff here - usually I compile nvim with Release tag.
 
-Last, but not least important: I use vim-plug to install my plugins and have fun :)
+Last, but not least important: I use vim-plug to install my plugins and have fun :smile:
+
+## Completion notes!
+
+Some autocompletion tools requires installation without setup with `Lspinstall` - so, check within
+
+[nvim-lspconfig repo](https://github.com/neovim/nvim-lspconfig)
+
