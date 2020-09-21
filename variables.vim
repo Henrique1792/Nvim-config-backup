@@ -6,6 +6,8 @@ set inccommand=split
 set wildoptions+=pum
 set cursorcolumn cursorline
 
+set undodir=~/.vim/undodir
+set undofile
 
 filetype indent plugin on
 set hidden autoindent modeline showcmd 

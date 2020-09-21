@@ -46,4 +46,7 @@ nnoremap <silent>gh :diffget //3
 nnoremap <silent>gf :diffget //2
 
 "markdown preview command
+
 nmap <leader>gm :LivedownToggle<CR>
+
+nnoremap <leader>u :UndotreeShow<CR>

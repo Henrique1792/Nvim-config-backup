@@ -39,8 +39,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 	  Plug 'roxma/nvim-yarp'
 	  Plug 'roxma/vim-hug-neovim-rpc'
 	endif
+
+	"Lsp options
 	Plug 'neovim/nvim-lsp'
 	Plug 'Shougo/deoplete-lsp'
+
+
+	"undoTree
+	Plug 'mbbill/undotree'
+
 
 call plug#end()
 
