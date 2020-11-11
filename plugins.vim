@@ -52,8 +52,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorites
+colo zenburn
 "colo nord
-colo ayu
+"colo ayu
 "colo wolfpack
 
 "signify

@@ -40,7 +40,7 @@ noremap <leader>f <ESC>:Files<CR>
 
 
 "fugitive
-nnoremap <silent><F5> <ESC>:Gvdiffsplit<CR>
+nnoremap <silent><F5> <ESC>:Gvdiffsplit!<CR>
 nnoremap <silent><F6> <ESC>:only<CR><ESC>:SignifyEnable<CR>
 nnoremap <silent>gh :diffget //3
 nnoremap <silent>gf :diffget //2
@@ -48,5 +48,14 @@ nnoremap <silent>gf :diffget //2
 "markdown preview command
 
 nmap <leader>gm :LivedownToggle<CR>
-noremap <leader>t :Buffers<CR>
+
+
+"undotree
 nnoremap <leader>u :UndotreeShow<CR>
+
+"fzf useful stuff 
+nmap <leader>/ :BLines<CR>
+nmap <leader>? :Rg<CR>
+nmap <leader>t :Buffers<CR>
+command! Capivara  execute ":BCommits"
+command! LCommands execute ":Commands"
