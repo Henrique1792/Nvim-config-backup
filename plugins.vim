@@ -5,9 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-
 	Plug 'vim-utils/vim-man'
-
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
 	if has('nvim') || has('patch-8.0.902')
@@ -31,7 +29,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'shime/vim-livedown'
 	Plug 'vimwiki/vimwiki'
 
-	"deoplete configuration
+	"deoplete requisites
 	if has('nvim')
 	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	else
@@ -44,18 +42,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'neovim/nvim-lsp'
 	Plug 'Shougo/deoplete-lsp'
 
-
 	"undoTree
 	Plug 'mbbill/undotree'
-
-
 call plug#end()
 
-"colorscheme - uncomment for choosing your favorites
-colo zenburn
+"colorscheme - uncomment for choosing your favorite one
+"colo zenburn
 "colo nord
-"colo ayu
+colo ayu
 "colo wolfpack
+"colo vydark
 
 "signify
 let g:signify_sign_add = "▶"
@@ -63,15 +59,12 @@ let g:signify_sign_delete = "✗"
 let g:signify_sign_show_count = 0
 let g:signify_sign_change = "⚠"
 
-
-
 " ale
 let g:ale_sign_error = '∅'
 let g:ale_sign_warning = 'Δ'
 let g:ale_open_list = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
-
 
 "airline
 let g:airline#extensions#ale#enabled = 1
@@ -97,8 +90,17 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
 "markdown content
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-			\ 'syntax': 'markdown', 'ext': '.md'}]
+"we're adding dummy content here (precisely how to build up
+"new wiki's if you need it. Have fun!
+
+"let personal_wiki = {}
+"let personal_wiki.path = '~/vimwiki/'
+"let personal_wiki.syntax = 'markdown'
+"let personal_wiki.ext = 'md'
+"let g:vimwiki_list = [personal_wiki]
+
+"fzf
+let g:fzf_layout = { 'down': '40%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1

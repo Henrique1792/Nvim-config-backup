@@ -29,7 +29,7 @@ nmap <silent><Up>   <C-W>+
 nmap <silent><Right> <C-W>>
 
 
-command! WipeReg for i in range(34,255) | silent call setreg(nr2char(i), []) | endfor
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 nmap <silent><leader><F7> :let @+=expand("%")<CR>
 nmap <silent><leader><F8> :let @+=expand("%:p")<CR>
 
