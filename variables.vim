@@ -12,7 +12,7 @@ set undofile
 filetype indent plugin on
 set hidden autoindent modeline showcmd 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
-set ts=4 softtabstop=4 et sw=4 tw=100
+set ts=4 softtabstop=4 et sw=4 
 set bg=dark
 set foldmethod=indent
 set foldlevel=99
@@ -27,7 +27,8 @@ set updatetime=100
 set scrolloff=3
 set noeol nofixendofline
 set noexpandtab 
-
+set cc=80
+highlight ColorColumn guifg=#3e3e3e guibg=#dcdcdc
 
 if (has("termguicolors"))
   set termguicolors

@@ -39,8 +39,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	endif
 
 	"Lsp options
-	Plug 'neovim/nvim-lsp'
-	Plug 'Shougo/deoplete-lsp'
+"	Plug 'neovim/nvim-lsp'
+"	Plug 'Shougo/deoplete-lsp'
 
 	"undoTree
 	Plug 'mbbill/undotree'
