@@ -44,15 +44,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	"undoTree
 	Plug 'mbbill/undotree'
+	"Comments
+	Plug 'tpope/vim-commentary'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
-"colo zenburn
+colo zenburn
 "colo nord
-colo ayu
+"colo ayu
 "colo wolfpack
 "colo vydark
-
+"colo monokai-chris
 "signify
 let g:signify_sign_add = "▶"
 let g:signify_sign_delete = "✗"
@@ -70,7 +72,7 @@ let g:ale_list_window_size = 5
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:airline_theme='understated'
+let g:airline_theme='silver'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if !exists('g:airline_symbols')
@@ -78,11 +80,11 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_alt_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = '⎇ '
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ' '
 let g:airline_symbols.maxlinenr = ' Φ'
 
 "indentLine

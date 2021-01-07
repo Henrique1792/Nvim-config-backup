@@ -4,6 +4,7 @@ noremap <silent><leader>sv :so $MYVIMRC<CR>
 noremap <silent><leader>bn <ESC>:bn<CR>
 noremap <silent><leader>bp <ESC>:bp<CR>
 noremap <silent><leader>bd <ESC>:bd<CR>
+noremap <silent><leader>bw <ESC>:bw<CR>
 
 vnoremap <silent><leader>y "*ygv"+y
 noremap	 <silent><leader>p "+p
@@ -40,10 +41,10 @@ noremap <leader>f <ESC>:Files<CR>
 
 
 "fugitive
-nnoremap <silent><F5> <ESC>:Gvdiffsplit!<CR>
-nnoremap <silent><F6> <ESC>:only<CR><ESC>:SignifyEnable<CR>
-nnoremap <silent>gh :diffget //3
-nnoremap <silent>gf :diffget //2
+nmap <silent><F5> <ESC>:Gvdiffsplit!<CR>
+nmap <silent><F6> <ESC>:only<CR><ESC>:SignifyEnable<CR>
+nnoremap <silent><leader>gh :diffget //3<CR>
+nnoremap <silent><leader>gf :diffget //2<CR>
 
 "markdown preview command
 
@@ -56,6 +57,6 @@ nnoremap <leader>u :UndotreeShow<CR>
 "fzf useful stuff 
 nmap <leader>/ :BLines<CR>
 nmap <leader>? :Rg<CR>
-nmap <leader>t :Buffers<CR>
+nmap <leader>b :Buffers<CR>
 command! Capivara  execute ":BCommits"
 command! LCommands execute ":Commands"
