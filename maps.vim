@@ -57,6 +57,6 @@ nnoremap <leader>u :UndotreeShow<CR>
 "fzf useful stuff 
 nmap <leader>/ :BLines<CR>
 nmap <leader>? :Rg<CR>
-nmap <leader>b :Buffers<CR>
+nmap <S-q> :Buffers<CR>
 command! Capivara  execute ":BCommits"
 command! LCommands execute ":Commands"
