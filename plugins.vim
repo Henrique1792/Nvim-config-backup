@@ -55,6 +55,7 @@ colo zenburn
 "colo wolfpack
 "colo vydark
 "colo monokai-chris
+
 "signify
 let g:signify_sign_add = "▶"
 let g:signify_sign_delete = "✗"
@@ -102,7 +103,7 @@ let g:indentLine_showFirstIndentLevel = 1
 "let g:vimwiki_list = [personal_wiki]
 
 "fzf
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'down': '15%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1

@@ -28,7 +28,6 @@ set scrolloff=3
 set noeol nofixendofline
 set noexpandtab 
 set cc=80
-highlight ColorColumn guifg=#3e3e3e guibg=#dcdcdc
 
 if (has("termguicolors"))
   set termguicolors
