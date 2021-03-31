@@ -10,15 +10,15 @@ vnoremap <silent><leader>y "*ygv"+y
 noremap	 <silent><leader>p "+p
 
 "function caps
-nmap <silent><leader><F2>  :noh<CR>
-nmap <silent><leader><F3>  :tabnew<CR>
-nmap <silent><leader><F4>  :tabclose<CR>
-nmap <silent><leader><F5>  :Gvdiffsplit!<CR>
-nmap <silent><leader><F6>  :only<CR><ESC>:SignifyEnable<CR>
-nmap <silent><leader><F7>  :let @+=expand("%")<CR>
-nmap <silent><leader><F8>  :let @+=expand("%:p")<CR>
-nmap <silent><leader><F9>  :BCommits<CR>
-nmap <silent><leader><F10> :let @+=getreg('"')<CR> :let @*=getreg('"')<CR>
+nmap <silent><F3>  :noh<CR>
+nmap <silent><F2>  :tabnew<CR>
+nmap <silent><F4>  :tabclose<CR>
+nmap <silent><F5>  :Gvdiffsplit!<CR>
+nmap <silent><F6>  :only<CR><ESC>:SignifyEnable<CR>
+nmap <silent><F7>  :let @+=expand("%")<CR> <ESC>:let @*=expand("%")<CR>
+nmap <silent><F8>  :let @+=expand("%:p")<CR> <ESC>:let @*=expand("%:p")<CR>
+nmap <silent><F9>  :BCommits<CR>
+nmap <silent><F10> :let @+=getreg('"')<CR> <ESC>:let @*=getreg('"')<CR>
 
 
 nmap <silent><leader>q  :<C-W>q<CR>
@@ -41,7 +41,7 @@ command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | 
 
 
 noremap Zz <c-w>_ \| <c-w>\|
-noremap Zo <c-w>=
+noremap <leader>= <c-w>=
 
 
 "fzf

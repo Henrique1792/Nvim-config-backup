@@ -46,6 +46,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'mbbill/undotree'
 	"Comments
 	Plug 'tpope/vim-commentary'
+	"LineDiff
+	Plug 'AndrewRadev/linediff.vim'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
@@ -73,7 +75,7 @@ let g:ale_list_window_size = 5
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:airline_theme='silver'
+let g:airline_theme='base16_chalk'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 if !exists('g:airline_symbols')
@@ -103,7 +105,7 @@ let g:indentLine_showFirstIndentLevel = 1
 "let g:vimwiki_list = [personal_wiki]
 
 "fzf
-let g:fzf_layout = { 'down': '15%' }
+let g:fzf_layout = { 'down': '30%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
