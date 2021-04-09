@@ -40,6 +40,7 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 25
 set langmenu=en_US.UTF-8
 language messages en_US.UTF-8
-
+set gcr= "n-v-c-sm-i-ci-ve:block"
+         
 let g:python3_host_prog="$HOME/.pyenv/shims/python3"
 let g:python_host_prog="$HOME/.pyenv/shims/python2.7"

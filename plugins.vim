@@ -5,7 +5,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-	Plug 'vim-utils/vim-man'
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
 	if has('nvim') || has('patch-8.0.902')
@@ -67,7 +66,7 @@ let g:signify_sign_change = "⚠"
 " ale
 let g:ale_sign_error = '∅'
 let g:ale_sign_warning = 'Δ'
-let g:ale_open_list = 1
+"let g:ale_open_list = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
 
@@ -105,7 +104,7 @@ let g:indentLine_showFirstIndentLevel = 1
 "let g:vimwiki_list = [personal_wiki]
 
 "fzf
-let g:fzf_layout = { 'down': '30%' }
+let g:fzf_layout = { 'down': '15%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
