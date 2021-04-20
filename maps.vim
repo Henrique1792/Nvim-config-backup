@@ -7,7 +7,7 @@ noremap <silent><leader>bd <ESC>:bd<CR>
 noremap <silent><leader>bw <ESC>:bw<CR>
 
 vnoremap <silent><leader>y "*ygv"+y
-noremap	 <silent><leader>p "+p
+noremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
 
 "function caps
 nmap <silent><F3>  :noh<CR>
