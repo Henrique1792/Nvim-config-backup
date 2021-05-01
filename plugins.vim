@@ -42,7 +42,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 "	Plug 'Shougo/deoplete-lsp'
 
 	"undoTree
-	Plug 'mbbill/undotree'
+	"Replaced by mundo
+	Plug 'simnalamburt/vim-mundo'
 	"Comments
 	Plug 'tpope/vim-commentary'
 	"LineDiff

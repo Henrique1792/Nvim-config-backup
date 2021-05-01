@@ -15,8 +15,8 @@ nmap <silent><F2>  :tabnew<CR>
 nmap <silent><F4>  :tabclose<CR>
 nmap <silent><F5>  :Gvdiffsplit!<CR>
 nmap <silent><F6>  :only<CR><ESC>:SignifyEnable<CR>
-nmap <silent><F7>  :let @+=expand("%")<CR><ESC>:let @*=expand("%")<CR>
-nmap <silent><F8>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
+nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
+nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
 nmap <silent><F10> :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
 
@@ -68,6 +68,6 @@ nmap <leader>gm :LivedownToggle<CR>
 
 
 "undotree
-nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>u :MundoToggle<CR>
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
