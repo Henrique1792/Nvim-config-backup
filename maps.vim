@@ -6,8 +6,12 @@ noremap <silent><leader>bp <ESC>:bp<CR>
 noremap <silent><leader>bd <ESC>:bd<CR>
 noremap <silent><leader>bw <ESC>:bw<CR>
 
-vnoremap <silent><leader>y "*ygv"+y
-noremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @"=getreg('+')<CR>
+" // We'll get from vim and send it to system clipboard
+" So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
+nmap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
+" // Same for pasting! Yet the sequence is inverted :p
+nmap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
+
 
 "function caps
 nmap <silent><F3>  :noh<CR>
