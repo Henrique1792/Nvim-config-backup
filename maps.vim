@@ -8,9 +8,9 @@ noremap <silent><leader>bw <ESC>:bw<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
-nmap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
+nnoremap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
 " // Same for pasting! Yet the sequence is inverted :p
-nmap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
+nnoremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
 
 
 "function caps
@@ -22,7 +22,6 @@ nmap <silent><F6>  :only<CR><ESC>:SignifyEnable<CR>
 nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
-nmap <silent><F10> :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
 
 
 nmap <silent><leader>q  :<C-W>q<CR>
@@ -71,7 +70,7 @@ nnoremap <silent><leader>gf :diffget //2<CR>
 nmap <leader>gm :LivedownToggle<CR>
 
 
-"undotree
+"Mundo undo tree
 nnoremap <leader>u :MundoToggle<CR>
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif

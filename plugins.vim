@@ -48,6 +48,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-commentary'
 	"LineDiff
 	Plug 'AndrewRadev/linediff.vim'
+	Plug 'vuciv/vim-bujo'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
@@ -72,11 +73,11 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
 
 "airline
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:airline_theme='raven'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_theme='raven'
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
@@ -92,7 +93,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = '⎇ '
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ' џ'
+let g:airline_symbols.maxlinenr = '〃'
 let g:airline_symbols.colnr = 'Ф'
 
 "indentLine
@@ -114,3 +115,15 @@ let g:fzf_layout = { 'down': '15%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
+
+"bujo
+"same as markdown approach - setting dummy path
+
+"nmap <silent>bj :Todo g<CR>
+"nmap <C-S> <Plug>BujoAddnormal
+"imap <C-S> <Plug>BujoAddinsert
+"nmap <C-Q> <Plug>BujoChecknormal
+"imap <C-Q> <Plug>BujoCheckinsert
+
+"let g:bujo#todo_file_path = '~'
+"let g:bujo#window_width = 50 
