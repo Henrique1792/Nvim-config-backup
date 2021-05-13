@@ -37,7 +37,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	  Plug 'roxma/vim-hug-neovim-rpc'
 	endif
 
-	"Lsp options
+"Lsp options
 "	Plug 'neovim/nvim-lsp'
 "	Plug 'Shougo/deoplete-lsp'
 
@@ -52,9 +52,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
-colo zenburn
+"colo zenburn
 "colo nord
-"colo ayu
+colo ayu
 "colo wolfpack
 "colo vydark
 "colo monokai-chris
