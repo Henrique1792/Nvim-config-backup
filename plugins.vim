@@ -29,20 +29,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vimwiki/vimwiki'
 
 	"deoplete requisites
-	if has('nvim')
 	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	else
-	  Plug 'Shougo/deoplete.nvim'
-	  Plug 'roxma/nvim-yarp'
-	  Plug 'roxma/vim-hug-neovim-rpc'
-	endif
-
-"Lsp options
-"	Plug 'neovim/nvim-lsp'
-"	Plug 'Shougo/deoplete-lsp'
+ 
+	"deoplete values
+	Plug 'Shougo/deoplete-clangx'
+	Plug 'Shougo/neco-vim'
 
 	"undoTree
-	"Replaced by mundo
 	Plug 'simnalamburt/vim-mundo'
 	"Comments
 	Plug 'tpope/vim-commentary'
@@ -71,6 +64,9 @@ let g:ale_sign_warning = 'Δ'
 "let g:ale_open_list = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
+let g:ale_completion_enabled = 1
+
+
 
 "airline
 let g:webdevicons_enable_airline_statusline = 1
@@ -115,6 +111,13 @@ let g:fzf_layout = { 'down': '15%' }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
+
+"gutentags
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 "bujo
 "same as markdown approach - setting dummy path
