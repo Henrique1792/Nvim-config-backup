@@ -46,8 +46,8 @@ call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
 "colo zenburn
-"colo nord
-colo ayu
+colo nord
+"colo ayu
 "colo wolfpack
 "colo vydark
 "colo monokai-chris
@@ -72,7 +72,7 @@ let g:ale_completion_enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='raven'
+let g:airline_theme='owo'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
@@ -96,16 +96,6 @@ let g:airline_symbols.colnr = 'Ф'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
-"markdown content
-"we're adding dummy content here (precisely how to build up
-"new wiki's if you need it. Have fun!
-
-"let personal_wiki = {}
-"let personal_wiki.path = '~/vimwiki/'
-"let personal_wiki.syntax = 'markdown'
-"let personal_wiki.ext = 'md'
-"let g:vimwiki_list = [personal_wiki]
-
 "fzf
 let g:fzf_layout = { 'down': '15%' }
 
@@ -118,6 +108,21 @@ let g:gutentags_project_root = ['.root']
 
 " generate datebases in my cache directory, prevent gtags files polluting my project
 let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+
+
+
+
+"markdown content
+"we're adding dummy content here (precisely how to build up
+"new wiki's if you need it. Have fun!
+
+"let personal_wiki = {}
+"let personal_wiki.path = '~/vimwiki/'
+"let personal_wiki.syntax = 'markdown'
+"let personal_wiki.ext = 'md'
+"let g:vimwiki_list = [personal_wiki]
+
 
 "bujo
 "same as markdown approach - setting dummy path
