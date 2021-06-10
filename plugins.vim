@@ -1,4 +1,4 @@
-"Plugins
+	"Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
 	Plug 'sheerun/vim-polyglot'
@@ -47,8 +47,8 @@ call plug#end()
 "colorscheme - uncomment for choosing your favorite one
 "colo zenburn
 "colo nord
-colo ayu
-"colo wolfpack
+"colo ayu
+colo wolfpack
 "colo vydark
 "colo monokai-chris
 
@@ -72,11 +72,13 @@ let g:ale_completion_enabled = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='raven'
+let g:airline_theme='owo'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#overflow_marker = 'Σ'
+
 
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}

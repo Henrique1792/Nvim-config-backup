@@ -28,7 +28,7 @@ set scrolloff=3
 set noeol nofixendofline
 set noexpandtab 
 set cc=80
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 
 if (has("termguicolors"))
   set termguicolors

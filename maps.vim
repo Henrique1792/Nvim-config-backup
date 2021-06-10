@@ -14,6 +14,11 @@ nnoremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
 
 
 "function caps
+"it contains Gvdiffsplit! from fugitive 
+"and BCommits from fzf!
+"- it violates maps intention of keeping only vim mappings here!
+" another option is throw everything here
+
 nmap <silent><F3>  :noh<CR>
 nmap <silent><F2>  :tabnew<CR>
 nmap <silent><F4>  :tabclose<CR>
@@ -23,6 +28,7 @@ nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
 
+nmap <leader><F12> <ESC>:Git blame<CR>
 
 nmap <silent><leader>q  :<C-W>q<CR>
 
