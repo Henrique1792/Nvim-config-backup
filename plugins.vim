@@ -41,6 +41,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-commentary'
 	"LineDiff
 	Plug 'AndrewRadev/linediff.vim'
+
+
+	"Note taking
+	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/limelight.vim'
+
 	Plug 'vuciv/vim-bujo'
 call plug#end()
 
@@ -68,7 +74,10 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
 let g:ale_completion_enabled = 1
 
-
+"Limelight and Goyo
+nmap <silent>\w :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
+let g:goyo_width=160
+let g:goyo_height=100
 
 "airline
 let g:webdevicons_enable_airline_statusline = 1
