@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
+	Plug 'dracula/vim', { 'as': 'dracula' } 
 	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
 	else
@@ -55,6 +56,7 @@ call plug#end()
 "colo ayu
 "colo wolfpack
 colo nord
+"colo dracula
 "colo ayu
 "colo wolfpack
 "colo vydark
@@ -83,7 +85,7 @@ let g:goyo_height=100
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='owo'
+let g:airline_theme='dracula'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
