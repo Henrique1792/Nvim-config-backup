@@ -49,6 +49,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/limelight.vim'
 
 	Plug 'vuciv/vim-bujo'
+	Plug 'mcchrish/nnn.vim'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
@@ -125,6 +126,8 @@ let g:gutentags_project_root = ['.root']
 let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 
+"nnn
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 
 
