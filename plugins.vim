@@ -29,12 +29,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'shime/vim-livedown'
 	Plug 'vimwiki/vimwiki'
 
-	"deoplete requisites
-	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	"	"deoplete requisites
+	"	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  
-	"deoplete values
-	Plug 'Shougo/deoplete-clangx'
-	Plug 'Shougo/neco-vim'
+	"	"deoplete values
+	"	Plug 'Shougo/deoplete-clangx'
+	"	Plug 'Shougo/neco-vim'
 
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
@@ -50,6 +50,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	Plug 'vuciv/vim-bujo'
 	Plug 'mcchrish/nnn.vim'
+	Plug 'psliwka/vim-smoothie'
+	Plug 'luochen1990/rainbow'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
@@ -76,6 +78,7 @@ let g:ale_sign_warning = 'Δ'
 set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
 let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
 
 "Limelight and Goyo
 nmap <silent>\w :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
@@ -116,7 +119,7 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:fzf_layout = { 'down': '15%' }
 
 "deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 "gutentags
 " config project root markers.
@@ -153,3 +156,5 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 
 "let g:bujo#todo_file_path = '~'
 "let g:bujo#window_width = 50 
+
+let g:rainbow_active = 1
