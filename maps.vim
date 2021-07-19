@@ -1,10 +1,18 @@
+" normal maps... maybe it's time to consider new modes for mapping?
+"
+"function caps
+"it contains Gvdiffsplit! from fugitive 
+"and BCommits from fzf!
+"- it violates maps intention of keeping only vim mappings here!
+" another option is throw everything here
+
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent><leader>bn <ESC>:bn<CR>
-noremap <silent><leader>bp <ESC>:bp<CR>
-noremap <silent><leader>bd <ESC>:bd<CR>
-noremap <silent><leader>bw <ESC>:bw<CR>
+noremap <silent>bn <ESC>:bn<CR>
+noremap <silent>bp <ESC>:bp<CR>
+noremap <silent>bd <ESC>:bd<CR>
+noremap <silent>bw <ESC>:bw<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
@@ -13,11 +21,7 @@ nnoremap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
 nnoremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
 
 
-"function caps
-"it contains Gvdiffsplit! from fugitive 
-"and BCommits from fzf!
-"- it violates maps intention of keeping only vim mappings here!
-" another option is throw everything here
+
 
 nmap <silent><F3>  :noh<CR>
 nmap <silent><F2>  :tabnew<CR>
@@ -57,7 +61,7 @@ nmap <silent><leader>c <ESC>:lclose<CR>
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
 
-noremap Zz <C-W>_ \| <c-w>\|
+noremap <leader>z <C-W>_ \| <c-w>\|
 noremap <leader>= <C-W>=
 
 

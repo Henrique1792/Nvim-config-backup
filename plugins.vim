@@ -48,6 +48,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 
+	Plug 'psliwka/vim-smoothie'
+	Plug 'luochen1990/rainbow'
+
 	Plug 'vuciv/vim-bujo'
 	Plug 'mcchrish/nnn.vim'
 call plug#end()
@@ -76,6 +79,8 @@ let g:ale_sign_warning = 'Δ'
 set omnifunc=ale#completion#OmniFunc
 let g:ale_list_window_size = 5
 let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+
 
 "Limelight and Goyo
 nmap <silent>\w :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
@@ -129,6 +134,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 "nnn
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
+"rainbow
+let g:rainbow_active = 1
 
 
 "markdown content
