@@ -48,7 +48,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 
-	Plug 'psliwka/vim-smoothie'
 	Plug 'luochen1990/rainbow'
 
 	Plug 'vuciv/vim-bujo'
@@ -59,12 +58,13 @@ call plug#end()
 "colo zenburn
 "colo ayu
 "colo wolfpack
-colo nord
+"colo nord
 "colo dracula
 "colo ayu
 "colo wolfpack
 "colo vydark
 "colo monokai-chris
+colo snow
 
 "signify
 let g:signify_sign_add = "▶"
@@ -91,7 +91,7 @@ let g:goyo_height=100
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='dracula'
+let g:airline_theme='snow_dark'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1

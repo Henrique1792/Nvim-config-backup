@@ -9,10 +9,10 @@
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent>bn <ESC>:bn<CR>
-noremap <silent>bp <ESC>:bp<CR>
-noremap <silent>bd <ESC>:bd<CR>
-noremap <silent>bw <ESC>:bw<CR>
+noremap <silent><leader>bn <ESC>:bn<CR>
+noremap <silent><leader>bp <ESC>:bp<CR>
+noremap <silent><leader>bd <ESC>:bd<CR>
+noremap <silent><leader>bw <ESC>:bw<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
@@ -32,6 +32,7 @@ nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
 
+nmap <silent><leader><F10> <ESC>:Limelight!!<CR>
 nmap <leader><F12> <ESC>:Git blame<CR>
 
 nmap <silent><leader>q  :<C-W>q<CR>
