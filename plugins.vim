@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
-	Plug 'dracula/vim', { 'as': 'dracula' } 
 	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
 	else
@@ -34,7 +33,6 @@ call plug#begin('~/.local/share/nvim/plugged')
  
 	"deoplete values
 	Plug 'Shougo/deoplete-clangx'
-	Plug 'Shougo/neco-vim'
 
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
@@ -72,14 +70,6 @@ let g:signify_sign_delete = "✗"
 let g:signify_sign_show_count = 0
 let g:signify_sign_change = "⚠"
 
-" ale
-let g:ale_sign_error = '∅'
-let g:ale_sign_warning = 'Δ'
-"let g:ale_open_list = 1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_list_window_size = 5
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
 
 
 "Limelight and Goyo
@@ -92,7 +82,6 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='snow_dark'
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
