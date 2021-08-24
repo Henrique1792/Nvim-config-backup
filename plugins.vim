@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
-	Plug 'dracula/vim', { 'as': 'dracula' } 
 	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
 	else
@@ -32,9 +31,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	"	"deoplete requisites
 	"	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
  
-	"	"deoplete values
-	"	Plug 'Shougo/deoplete-clangx'
-	"	Plug 'Shougo/neco-vim'
+	"deoplete values
+	Plug 'Shougo/deoplete-clangx'
 
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
@@ -48,22 +46,23 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 
+	Plug 'luochen1990/rainbow'
+
 	Plug 'vuciv/vim-bujo'
 	Plug 'mcchrish/nnn.vim'
-	Plug 'psliwka/vim-smoothie'
-	Plug 'luochen1990/rainbow'
 call plug#end()
 
 "colorscheme - uncomment for choosing your favorite one
 "colo zenburn
 "colo ayu
 "colo wolfpack
-colo nord
+"colo nord
 "colo dracula
 "colo ayu
 "colo wolfpack
 "colo vydark
 "colo monokai-chris
+colo snow
 
 "signify
 let g:signify_sign_add = "▶"
@@ -71,14 +70,7 @@ let g:signify_sign_delete = "✗"
 let g:signify_sign_show_count = 0
 let g:signify_sign_change = "⚠"
 
-" ale
-let g:ale_sign_error = '∅'
-let g:ale_sign_warning = 'Δ'
-"let g:ale_open_list = 1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_list_window_size = 5
-let g:ale_completion_enabled = 1
-let g:ale_completion_autoimport = 1
+
 
 "Limelight and Goyo
 nmap <silent>\w :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
@@ -89,8 +81,7 @@ let g:goyo_height=100
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='dracula'
-let g:airline#extensions#ale#enabled = 1
+let g:airline_theme='snow_dark'
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
@@ -132,6 +123,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 "nnn
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
+"rainbow
+let g:rainbow_active = 1
 
 
 "markdown content

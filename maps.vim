@@ -1,3 +1,11 @@
+" normal maps... maybe it's time to consider new modes for mapping?
+"
+"function caps
+"it contains Gvdiffsplit! from fugitive 
+"and BCommits from fzf!
+"- it violates maps intention of keeping only vim mappings here!
+" another option is throw everything here
+
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
@@ -13,11 +21,7 @@ nnoremap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
 nnoremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
 
 
-"function caps
-"it contains Gvdiffsplit! from fugitive 
-"and BCommits from fzf!
-"- it violates maps intention of keeping only vim mappings here!
-" another option is throw everything here
+
 
 nmap <silent><F3>  :noh<CR>
 nmap <silent><F2>  :tabnew<CR>
@@ -28,6 +32,7 @@ nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
 
+nmap <silent><leader><F10> <ESC>:Limelight!!<CR>
 nmap <leader><F12> <ESC>:Git blame<CR>
 
 nmap <silent><leader>q  :<C-W>q<CR>
@@ -57,7 +62,7 @@ nmap <silent><leader>c <ESC>:lclose<CR>
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
 
-noremap Zz <C-W>_ \| <c-w>\|
+noremap <leader>z <C-W>_ \| <c-w>\|
 noremap <leader>= <C-W>=
 
 
