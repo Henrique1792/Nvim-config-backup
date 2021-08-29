@@ -1,0 +1,72 @@
+lua << EOF
+--Required packages
+local lsp_install = require'lspinstall'
+local saga = require 'lspsaga'
+
+
+-- setup packages
+lsp_install.setup() -- important
+
+-- functions
+
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end  
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n','gi','<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+
+
+  --...
+
+-- setup completion
+  require'completion'.on_attach(client, bufnr)
+
+end
+
+
+local servers = lsp_install.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{
+	  on_attach = on_attach
+  }
+end
+
+-- saga configuration
+saga.init_lsp_saga {
+  error_sign = '✗',
+  warn_sign = '▶',
+  hint_sign = 'ㄔ',
+  infor_sign = 'Δ',
+  border_style = "round",
+}
+
+
+-- tree-sitter
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = false,
+    disable = {},
+  },
+  ensure_installed = {
+    "python",
+    "c",
+    "go",
+    "gomod",
+    "bash",
+    "cpp",
+  },
+}
+
+EOF
+
+
+" lua content
+set completeopt=menuone,noinsert,noselect
+nnoremap <silent>K :Lspsaga hover_doc<CR>

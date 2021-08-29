@@ -27,7 +27,7 @@ nmap <silent><F3>  :noh<CR>
 nmap <silent><F2>  :tabnew<CR>
 nmap <silent><F4>  :tabclose<CR>
 nmap <silent><F5>  :Gvdiffsplit!<CR>
-nmap <silent><F6>  :only<CR><ESC>:SignifyEnable<CR>
+nmap <silent><F6>  :only!<CR><ESC>:SignifyEnable<CR>
 nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
@@ -37,7 +37,7 @@ nmap <leader><F12> <ESC>:Git blame<CR>
 
 nmap <silent><leader>q  :<C-W>q<CR>
 
-nmap <silent><leader>\| :vsplit<CR><C-[><C-W>l
+nmap <silent><leader>\ :vsplit<CR><C-[><C-W>l
 nmap <silent><leader>- :split<CR><C-[><C-W>j
 
 nmap <silent><leader>h <C-W>h
@@ -83,5 +83,3 @@ nmap <leader>gm :LivedownToggle<CR>
 
 "Mundo undo tree
 nnoremap <leader>u :MundoToggle<CR>
-
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif

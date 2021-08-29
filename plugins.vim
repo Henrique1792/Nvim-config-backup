@@ -15,24 +15,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 
-	"ale 
-	Plug 'dense-analysis/ale'
 	
 	"airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'ryanoasis/vim-devicons'
+	Plug 'ryaoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
 
 	"markdown note support
 	Plug 'shime/vim-livedown'
 	Plug 'vimwiki/vimwiki'
-
-	"	"deoplete requisites
-	"	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- 
-	"deoplete values
-	Plug 'Shougo/deoplete-clangx'
 
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
@@ -50,18 +42,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	Plug 'vuciv/vim-bujo'
 	Plug 'mcchrish/nnn.vim'
+
+	"lsp
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'kabouzeid/nvim-lspinstall'
+	Plug 'glepnir/lspsaga.nvim'
+	Plug 'nvim-lua/completion-nvim'
+
+	"tree-sitter
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
-"colorscheme - uncomment for choosing your favorite one
-"colo zenburn
-"colo ayu
-"colo wolfpack
-"colo nord
-"colo dracula
-"colo ayu
-"colo wolfpack
-"colo vydark
-"colo monokai-chris
 colo snow
 
 "signify
