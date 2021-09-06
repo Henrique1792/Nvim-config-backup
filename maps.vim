@@ -9,10 +9,10 @@
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent><leader>bn <ESC>:bn<CR>
-noremap <silent><leader>bp <ESC>:bp<CR>
-noremap <silent><leader>bd <ESC>:bd<CR>
-noremap <silent><leader>bw <ESC>:bw<CR>
+noremap <silent><localleader>n <ESC>:bn<CR>
+noremap <silent><localleader>p <ESC>:bp<CR>
+noremap <silent><localleader>d <ESC>:bd<CR>
+noremap <silent><localleader>w <ESC>:bw<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
@@ -35,7 +35,7 @@ nmap <silent><F9>  :BCommits<CR>
 nmap <silent><leader><F10> <ESC>:Limelight!!<CR>
 nmap <leader><F12> <ESC>:Git blame<CR>
 
-nmap <silent><leader>q  :<C-W>q<CR>
+nmap <silent><leader>Q  :<C-W>q<CR>
 
 nmap <silent><leader>\ :vsplit<CR><C-[><C-W>l
 nmap <silent><leader>- :split<CR><C-[><C-W>j
@@ -59,7 +59,6 @@ nmap <silent><leader>o <ESC>:lopen 5<CR><ESC><C-W>k
 nmap <silent><leader>c <ESC>:lclose<CR>
 
 
-command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
 
 noremap <leader>z <C-W>_ \| <c-w>\|
@@ -78,7 +77,7 @@ nnoremap <silent><leader>gh :diffget //3<CR>
 nnoremap <silent><leader>gf :diffget //2<CR>
 
 "markdown preview command
-nmap <leader>gm :LivedownToggle<CR>
+nmap <localleader>gm :LivedownToggle<CR>
 
 
 "Mundo undo tree

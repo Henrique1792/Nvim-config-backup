@@ -1,11 +1,10 @@
-	"Plugins
+"Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-	Plug 'sheerun/vim-polyglot'
 	Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-	Plug 'ludovicchabant/vim-gutentags'
+	"Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
 	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
@@ -19,7 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	"airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'ryaoasis/vim-devicons'
+	Plug 'ryanoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
 
 	"markdown note support
@@ -37,10 +36,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 	"Note taking
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
+	Plug 'vuciv/vim-bujo'
 
+	"color matching chars
 	Plug 'luochen1990/rainbow'
 
-	Plug 'vuciv/vim-bujo'
 	Plug 'mcchrish/nnn.vim'
 
 	"lsp
@@ -64,7 +64,7 @@ let g:signify_sign_change = "⚠"
 
 
 "Limelight and Goyo
-nmap <silent>\w :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
+nmap <silent><localleader>W :Goyo<CR>:Limelight!!<CR>:SignifyToggle<CR>
 let g:goyo_width=160
 let g:goyo_height=100
 
@@ -74,7 +74,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='snow_dark'
 let g:airline#extensions#fzf#enabled = 1
-let g:airline#extensions#gutentags#enabled = 1
+"let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#overflow_marker = 'Σ'
 
@@ -100,19 +100,17 @@ let g:indentLine_showFirstIndentLevel = 1
 "fzf
 let g:fzf_layout = { 'down': '15%' }
 
-"deoplete
-"let g:deoplete#enable_at_startup = 1
-
 "gutentags
 " config project root markers.
-let g:gutentags_project_root = ['.root']
+"let g:gutentags_project_root = ['.root']
 
 " generate datebases in my cache directory, prevent gtags files polluting my project
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+"let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 
 "nnn
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+nnoremap <silent> <localleader>n :NnnPicker<CR>
 
 "rainbow
 let g:rainbow_active = 1
@@ -141,4 +139,7 @@ let g:rainbow_active = 1
 "let g:bujo#todo_file_path = '~'
 "let g:bujo#window_width = 50 
 
+"rainbow
 let g:rainbow_active = 1
+"wipe register
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor

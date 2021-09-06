@@ -5,7 +5,7 @@ local saga = require 'lspsaga'
 
 
 -- setup packages
-lsp_install.setup() -- important
+lsp_install.setup()
 
 -- functions
 
@@ -13,7 +13,8 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end  
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  local opts = { noremap=true, silent=true }  
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n','gi','<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 
@@ -69,4 +70,6 @@ EOF
 
 " lua content
 set completeopt=menuone,noinsert,noselect
-nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent><localleader>k :Lspsaga hover_doc<CR>
+nnoremap <silent><localleader>gs :Lspsaga signature_help<CR>
+nnoremap <silent><leader>gd :Lspsaga preview_definition<CR>

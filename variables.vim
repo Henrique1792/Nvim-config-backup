@@ -36,6 +36,7 @@ endif
 
 "let stuff
 let mapleader = "\<Space>"
+let maplocalleader = "\\"
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 25
 
