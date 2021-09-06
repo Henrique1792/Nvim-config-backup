@@ -1,11 +1,15 @@
 "Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-	Plug 'rafi/awesome-vim-colorschemes'
-	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-surround'
-	"Plug 'ludovicchabant/vim-gutentags'
 	Plug 'flazz/vim-colorschemes'
+	Plug 'rafi/awesome-vim-colorschemes'
+	Plug 'machakann/vim-sandwich'
+
+	"tpope block
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-eunuch'
+
+	"signify
 	if has('nvim') || has('patch-8.0.902')
 		Plug 'mhinz/vim-signify'
 	else
@@ -21,9 +25,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Yggdroot/indentLine'
 
-	"markdown note support
-	Plug 'shime/vim-livedown'
-	Plug 'vimwiki/vimwiki'
 
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
@@ -37,10 +38,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/limelight.vim'
 	Plug 'vuciv/vim-bujo'
+	"markdown note support
+	Plug 'shime/vim-livedown'
+	Plug 'vimwiki/vimwiki'
 
 	"color matching chars
-	Plug 'luochen1990/rainbow'
+	Plug 'p00f/nvim-ts-rainbow'
 
+
+	"nnn file management
 	Plug 'mcchrish/nnn.vim'
 
 	"lsp
@@ -51,6 +57,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	"tree-sitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 colo snow
@@ -99,13 +106,6 @@ let g:indentLine_showFirstIndentLevel = 1
 
 "fzf
 let g:fzf_layout = { 'down': '15%' }
-
-"gutentags
-" config project root markers.
-"let g:gutentags_project_root = ['.root']
-
-" generate datebases in my cache directory, prevent gtags files polluting my project
-"let g:gutentags_cache_dir = expand('~/.cache/tags')
 
 
 "nnn
