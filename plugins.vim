@@ -53,7 +53,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'kabouzeid/nvim-lspinstall'
 	Plug 'glepnir/lspsaga.nvim'
-	Plug 'nvim-lua/completion-nvim'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/cmp-vsnip'
+	Plug 'hrsh7th/vim-vsnip'
+
+	"tags backup
+	Plug 'ludovicchabant/vim-gutentags'
 
 	"tree-sitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -81,7 +89,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='snow_dark'
 let g:airline#extensions#fzf#enabled = 1
-"let g:airline#extensions#gutentags#enabled = 1
+let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#overflow_marker = 'Σ'
 
@@ -110,11 +118,15 @@ let g:fzf_layout = { 'down': '15%' }
 
 "nnn
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-nnoremap <silent> <localleader>n :NnnPicker<CR>
 
 "rainbow
 let g:rainbow_active = 1
 
+"gutentags 
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['.git']
+let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
+command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
 
 "markdown content
 "we're adding dummy content here (precisely how to build up

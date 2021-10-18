@@ -9,16 +9,16 @@
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent><localleader>n <ESC>:bn<CR>
-noremap <silent><localleader>p <ESC>:bp<CR>
-noremap <silent><localleader>d <ESC>:bd<CR>
-noremap <silent><localleader>w <ESC>:bw<CR>
+noremap <silent><localleader>n <C-[>:bn<CR>
+noremap <silent><localleader>p <C-[>:bp<CR>
+noremap <silent><localleader>d <C-[>:bd<CR>
+noremap <silent><localleader>w <C-[>:bw<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
-nnoremap <silent><leader>y :let @+=getreg('"')<CR><ESC>:let @*=getreg('"')<CR>
+nnoremap <silent><leader>y :let @+=getreg('"')<CR><C-[>:let @*=getreg('"')<CR>
 " // Same for pasting! Yet the sequence is inverted :p
-nnoremap <silent><leader>p :let @"=getreg('*')<CR><ESC>:let @1=getreg('+')<CR>
+nnoremap <silent><leader>p :let @"=getreg('*')<CR><C-[>:let @1=getreg('+')<CR>
 
 
 
@@ -27,15 +27,15 @@ nmap <silent><F3>  :noh<CR>
 nmap <silent><F2>  :tabnew<CR>
 nmap <silent><F4>  :tabclose<CR>
 nmap <silent><F5>  :Gvdiffsplit!<CR>
-nmap <silent><F6>  :only!<CR><ESC>:SignifyEnable<CR>
-nmap <silent><F7>  :let @+=expand("%:p")<CR><ESC>:let @*=expand("%:p")<CR>
-nmap <silent><F8>  :let @+=expand("%:p:h")<CR><ESC>:let @*=expand("%:p:h")<CR>
+nmap <silent><F6>  :only!<CR><C-[>:SignifyEnable<CR>
+nmap <silent><F7>  :let @+=expand("%:p")<CR><C-[>:let @*=expand("%:p")<CR>
+nmap <silent><F8>  :let @+=expand("%:p:h")<CR><C-[>:let @*=expand("%:p:h")<CR>
 nmap <silent><F9>  :BCommits<CR>
 
-nmap <silent><leader><F10> <ESC>:Limelight!!<CR>
-nmap <leader><F12> <ESC>:Git blame<CR>
+nmap <silent><leader><F10> <C-[>:Limelight!!<CR>
+nmap <leader><F12> <C-[>:Git blame<CR>
 
-nmap <silent><leader>Q  :<C-W>q<CR>
+nmap <silent><leader>q  :<C-W>q<CR>
 
 nmap <silent><leader>\ :vsplit<CR><C-[><C-W>l
 nmap <silent><leader>- :split<CR><C-[><C-W>j
@@ -45,18 +45,19 @@ nmap <silent><leader>j <C-W>j
 nmap <silent><leader>k <C-W>k
 nmap <silent><leader>l <C-W>l
 
-nmap <silent><leader><Left> <C-W><
-nmap <silent><leader><Down> <C-W>-
-nmap <silent><leader><Up>   <C-W>+
-nmap <silent><leader><Right> <C-W>>
+nmap <silent><localleader><Left> <C-W><
+nmap <silent><localleader><Down> <C-W>-
+nmap <silent><localleader><Up>   <C-W>+
+nmap <silent><localleader><Right> <C-W>>
+nmap <silent><localleader>r <C-[>:reg<CR>
 
-nmap <silent><Left>   <ESC>:lprev<CR>
-nmap <silent><Right>  <ESC>:lnext<CR>
-nmap <silent><Up>     <ESC>:lfirst<CR>
-nmap <silent><Down>   <ESC>:llast<CR>
-
-nmap <silent><leader>o <ESC>:lopen 5<CR><ESC><C-W>k
-nmap <silent><leader>c <ESC>:lclose<CR>
+"nmap <silent><Left>   <C-[>:lprev<CR>
+"nmap <silent><Right>  <C-[>:lnext<CR>
+"nmap <silent><Up>     <C-[>:lfirst<CR>
+"nmap <silent><Down>   <C-[>:llast<CR>
+"
+"nmap <silent><leader>o <C-[>:lopen 5<CR><C-[><C-W>k
+"nmap <silent><leader>c <C-[>:lclose<CR>
 
 
 
@@ -66,7 +67,7 @@ noremap <leader>= <C-W>=
 
 
 "fzf
-noremap <leader>f <ESC>:Files<CR>
+noremap <leader>f <C-[>:Files<CR>
 nmap <leader>/ :BLines<CR>
 nmap <leader>? :Rg<CR>
 nmap <S-q> :Buffers<CR>
