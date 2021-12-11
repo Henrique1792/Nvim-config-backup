@@ -15,9 +15,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 	else
 		Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 	endif
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+	" fzf - trying telescope for some time =)
+	" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	" Plug 'junegunn/fzf.vim'
 
+	"telescope
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'sharkdp/fd'
 	
 	"airline
 	Plug 'vim-airline/vim-airline'
@@ -51,8 +56,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	"lsp
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'kabouzeid/nvim-lspinstall'
-	Plug 'glepnir/lspsaga.nvim'
+	Plug 'williamboman/nvim-lsp-installer'
+	Plug 'tami5/lspsaga.nvim'
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	
@@ -60,7 +65,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
 
-	"tags backup
+	"tags 
 	Plug 'ludovicchabant/vim-gutentags'
 
 	"tree-sitter
@@ -88,10 +93,10 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='snow_dark'
-let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#overflow_marker = 'Σ'
+"let g:airline#extensions#fzf#enabled = 1
 
 
 if !exists('g:airline_symbols')
@@ -113,7 +118,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
 "fzf
-let g:fzf_layout = { 'down': '15%' }
+"let g:fzf_layout = { 'down': '15%' }
 
 
 "nnn

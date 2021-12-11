@@ -13,12 +13,14 @@ noremap <silent><localleader>n <C-[>:bn<CR>
 noremap <silent><localleader>p <C-[>:bp<CR>
 noremap <silent><localleader>d <C-[>:bd<CR>
 noremap <silent><localleader>w <C-[>:bw<CR>
+noremap <silent><localleader>W <C-[>:w<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"
 nnoremap <silent><leader>y :let @+=getreg('"')<CR><C-[>:let @*=getreg('"')<CR>
-" // Same for pasting! Yet the sequence is inverted :p
-nnoremap <silent><leader>p :let @"=getreg('*')<CR><C-[>:let @1=getreg('+')<CR>
+" // Same for pasting! Yet the sequence is inverted - attention! '+' register
+" pastes into q
+nnoremap <silent><leader>p :let @"=getreg('*')<CR><C-[>:let @q=getreg('+')<CR>
 
 
 
@@ -30,7 +32,7 @@ nmap <silent><F5>  :Gvdiffsplit!<CR>
 nmap <silent><F6>  :only!<CR><C-[>:SignifyEnable<CR>
 nmap <silent><F7>  :let @+=expand("%:p")<CR><C-[>:let @*=expand("%:p")<CR>
 nmap <silent><F8>  :let @+=expand("%:p:h")<CR><C-[>:let @*=expand("%:p:h")<CR>
-nmap <silent><F9>  :BCommits<CR>
+nmap <silent><F9>  :Telescope git_commits<CR>
 
 nmap <silent><leader><F10> <C-[>:Limelight!!<CR>
 nmap <leader><F12> <C-[>:Git blame<CR>
@@ -51,26 +53,32 @@ nmap <silent><localleader><Up>   <C-W>+
 nmap <silent><localleader><Right> <C-W>>
 nmap <silent><localleader>r <C-[>:reg<CR>
 
-"nmap <silent><Left>   <C-[>:lprev<CR>
-"nmap <silent><Right>  <C-[>:lnext<CR>
-"nmap <silent><Up>     <C-[>:lfirst<CR>
-"nmap <silent><Down>   <C-[>:llast<CR>
+"loclist navigation
+"nmap <silent><leader>o :lopen 5<CR><C-[><C-W>k
+"nmap <silent><leader>c :lclose<CR>
 "
-"nmap <silent><leader>o <C-[>:lopen 5<CR><C-[><C-W>k
-"nmap <silent><leader>c <C-[>:lclose<CR>
+"nmap <silent><Left>   :lprev<CR>
+"nmap <silent><Right>  :lnext<CR>
+"nmap <silent><Up>     :lfirst<CR>
+"nmap <silent><Down>   :llast<CR>
 
-
-
-
+"zooming and recovering
 noremap <leader>z <C-W>_ \| <c-w>\|
 noremap <leader>= <C-W>=
 
 
-"fzf
-noremap <leader>f <C-[>:Files<CR>
-nmap <leader>/ :BLines<CR>
-nmap <leader>? :Rg<CR>
-nmap <S-q> :Buffers<CR>
+"fzf - backup
+"noremap <leader>f <C-[>:Files<CR>
+"nmap <leader>/ :BLines<CR>
+"nmap <leader>? :Rg<CR>
+"nmap <S-q> :Buffers<CR>
+"nmap <silent><F9>  :BCommits<CR>
+
+"Telescope
+nnoremap <silent><leader>f <cmd>Telescope find_files<cr>
+nnoremap <silent><leader>? <cmd>Telescope live_grep<cr>
+nnoremap <silent><S-q> <cmd>Telescope buffers<cr>
+nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 
 
 "fugitive

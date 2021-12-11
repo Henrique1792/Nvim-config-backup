@@ -1,18 +1,25 @@
 lua << EOF
 --Required packages
-local lsp_install = require'lspinstall'
+--lspconfig and lspinstall
+local lspconfig = require'lspconfig'
+local lsp_install = require('nvim-lsp-installer')
+local servers = require('nvim-lsp-installer.servers' )
+
+-- lspsaga and cmp
+local cmp = require('cmp')
 local saga = require 'lspsaga'
-local cmp = require'cmp'
-local servers = lsp_install.installed_servers()
+
+-- telescope
+local telescope = require('telescope')
+local actions = require("telescope.actions")
 
 
--- setup packages
-lsp_install.setup()
+
 
 -- functions
 
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end  
+-- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end  
 
   -- Mappings.
   local opts = { noremap=true, silent=true }  
@@ -27,25 +34,22 @@ local on_attach = function(client, bufnr)
 end
 
 
-local servers = lsp_install.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{
-	  on_attach = on_attach
-  }
-end
+lsp_install.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+end)
 
 -- saga configuration
 saga.init_lsp_saga {
   error_sign = '✗',
-  warn_sign = '▶',
-  hint_sign = 'ㄔ',
+  warn_sign = 'Ⅺ',
+  hint_sign = 'ツ',
   infor_sign = 'Δ',
   border_style = "round",
 }
 
 
 -- tree-sitter
-
 require'nvim-treesitter.configs'.setup {
   rainbow = {
     enable = true,
@@ -82,7 +86,7 @@ require'nvim-treesitter.configs'.setup {
     mapping = {
 	  ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 	  ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
@@ -95,21 +99,61 @@ require'nvim-treesitter.configs'.setup {
       { name = 'buffer' },
     }
   })
- -- Setup lspconfig.
 
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup {
-	  {on_attach = on_attach}, 
+ -- Setup lspconfig.
+for _, server in ipairs(servers) do
+  lspconfig[server].setup{
+	  on_attach = on_attach
 	  {capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())}
   }
 end
 
-require'nvim-treesitter.configs'.setup {
-}
 
+-- telescope
+ telescope.setup{
+   defaults = {
+     -- Default configuration for telescope goes here:
+     -- config_key = value,
+
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+	  "--trim" 
+	  },
+
+
+     mappings = {
+       i = {
+         -- map actions.which_key to <C-h> (default: <C-/>)
+         -- actions.which_key shows the mappings for your picker,
+         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+
+		["<esc>"] = actions.close
+       },
+     },
+   },
+   pickers = {
+     -- Default configuration for builtin pickers goes here:
+     -- picker_name = {
+     --   picker_config_key = value,
+     --   ...
+     -- }
+   },
+   extensions = {
+     -- Your extension configuration goes here:
+     -- extension_name = {
+     --   extension_config_key = value,
+     -- }
+   }
+ }
 EOF
 
-" lua content
+" Saga setup
 set completeopt=menuone,noinsert,noselect
 nnoremap <silent><localleader>k :Lspsaga hover_doc<CR>
 
