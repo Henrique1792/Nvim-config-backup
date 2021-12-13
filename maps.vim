@@ -91,3 +91,21 @@ nmap <localleader>gm :LivedownToggle<CR>
 
 "Mundo undo tree
 nnoremap <leader>u :MundoToggle<CR>
+
+
+
+"Toggle mapping
+let s:mappingsState=1
+command! TM call ToggleMappings()
+function! ToggleMappings()
+    if s:mappingsState
+		nmap J :m+1<CR>
+		nmap K :m-2<CR>
+    else
+        unmap J
+        unmap K
+    endif
+    let s:mappingsState = !s:mappingsState
+endfunction
+
+nmap <silent><localleader><S-x> :TM<CR>
