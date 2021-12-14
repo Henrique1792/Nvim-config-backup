@@ -13,7 +13,7 @@ filetype indent plugin on
 set hidden autoindent modeline showcmd 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set ts=4 softtabstop=4 et sw=4 
-autocmd Filetype *.py,*.js setlocal tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+autocmd Filetype *.py,*.js setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set bg=dark
 set foldmethod=indent
 set foldlevel=99

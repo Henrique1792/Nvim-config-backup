@@ -34,7 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	"undoTree
 	Plug 'simnalamburt/vim-mundo'
 	"Comments
-	Plug 'tpope/vim-commentary'
+	Plug 'numToStr/Comment.nvim'
 	"LineDiff
 	Plug 'AndrewRadev/linediff.vim'
 
