@@ -9,12 +9,6 @@ local servers = require('nvim-lsp-installer.servers' )
 local cmp = require('cmp')
 local saga = require 'lspsaga'
 
--- telescope
-local telescope = require('telescope')
-local actions = require("telescope.actions")
-
-
-
 
 -- functions
 
@@ -108,49 +102,6 @@ for _, server in ipairs(servers) do
   }
 end
 
-
--- telescope
- telescope.setup{
-   defaults = {
-     -- Default configuration for telescope goes here:
-     -- config_key = value,
-
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-	  "--trim" 
-	  },
-
-
-     mappings = {
-       i = {
-         -- map actions.which_key to <C-h> (default: <C-/>)
-         -- actions.which_key shows the mappings for your picker,
-         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-
-		["<esc>"] = actions.close
-       },
-     },
-   },
-   pickers = {
-     -- Default configuration for builtin pickers goes here:
-     -- picker_name = {
-     --   picker_config_key = value,
-     --   ...
-     -- }
-   },
-   extensions = {
-     -- Your extension configuration goes here:
-     -- extension_name = {
-     --   extension_config_key = value,
-     -- }
-   }
- }
 EOF
 
 " Saga setup

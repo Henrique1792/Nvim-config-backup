@@ -15,14 +15,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 	else
 		Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 	endif
-	" fzf - trying telescope for some time =)
-	" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	" Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 
-	"telescope
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
-	Plug 'sharkdp/fd'
 	
 	"airline
 	Plug 'vim-airline/vim-airline'
@@ -96,7 +91,7 @@ let g:airline_theme='snow_dark'
 let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#overflow_marker = 'Σ'
-"let g:airline#extensions#fzf#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
 
 
 if !exists('g:airline_symbols')
@@ -118,7 +113,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_showFirstIndentLevel = 1
 
 "fzf
-"let g:fzf_layout = { 'down': '15%' }
+let g:fzf_layout = { 'down': '15%' }
 
 
 "nnn

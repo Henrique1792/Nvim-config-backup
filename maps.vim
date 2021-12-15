@@ -68,17 +68,11 @@ noremap <leader>= <C-W>=
 
 
 "fzf - backup
-"noremap <leader>f <C-[>:Files<CR>
-"nmap <leader>/ :BLines<CR>
-"nmap <leader>? :Rg<CR>
-"nmap <S-q> :Buffers<CR>
-"nmap <silent><F9>  :BCommits<CR>
-
-"Telescope
-nnoremap <silent><leader>f <cmd>Telescope find_files<cr>
-nnoremap <silent><leader>? <cmd>Telescope live_grep<cr>
-nnoremap <silent><S-q> <cmd>Telescope buffers<cr>
-nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
+noremap <leader>f <C-[>:Files<CR>
+nmap <leader>/ :BLines<CR>
+nmap <leader>? :Rg<CR>
+nmap <S-q> :Buffers<CR>
+nmap <silent><F9>  :BCommits<CR>
 
 
 "fugitive
