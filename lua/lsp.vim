@@ -4,6 +4,7 @@ lua << EOF
 local lspconfig = require'lspconfig'
 local lsp_install = require('nvim-lsp-installer')
 local servers = require('nvim-lsp-installer.servers' )
+local comment = require('Comment')
 
 -- lspsaga and cmp
 local cmp = require('cmp')
@@ -102,6 +103,9 @@ for _, server in ipairs(servers) do
   }
 end
 
+-- comment
+comment.setup()
+
 EOF
 
 " Saga setup
@@ -110,6 +114,7 @@ nnoremap <silent><localleader>k :Lspsaga hover_doc<CR>
 
 nnoremap <silent><localleader>gs :Lspsaga signature_help<CR>
 nnoremap <silent><localleader>gd :Lspsaga preview_definition<CR>
+nnoremap <silent><localleader><S-d> :Lspsaga show_cursor_diagnostics<CR>
 
 
 nnoremap <silent><localleader>ca :Lspsaga code_action<CR>

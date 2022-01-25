@@ -62,9 +62,8 @@ nmap <silent><localleader>r <C-[>:reg<CR>
 "nmap <silent><Up>     :lfirst<CR>
 "nmap <silent><Down>   :llast<CR>
 
-"zooming and recovering
 noremap <leader>z <C-W>_ \| <c-w>\|
-noremap <leader>= <C-W>=
+noremap <leader><S-z> <C-W>=
 
 
 "fzf - backup
