@@ -13,7 +13,8 @@ filetype indent plugin on
 set hidden autoindent modeline showcmd 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set ts=4 softtabstop=4 et sw=4 
-autocmd Filetype *.py, *.js setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+" autocmd Filetype *.py, *.js setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set bg=dark
 set foldmethod=indent
 set foldlevel=99
@@ -45,7 +46,7 @@ set langmenu=en_US.UTF-8
 language messages en_US.UTF-8
 set gcr= "n-v-c-sm-i-ci-ve:block"
          
-let g:python3_host_prog="$HOME/.pyenv/shims/python3"
+let g:python3_host_prog="$HOME/.pyenv/shims/python3.9"
 let g:python_host_prog="$HOME/.pyenv/shims/python2.7"
 
 command! -bang WatchForChanges                  :call WatchForChanges(@%,  {'toggle': 1, 'autoread': <bang>0})

@@ -114,10 +114,10 @@ nnoremap <silent><localleader>k :Lspsaga hover_doc<CR>
 
 nnoremap <silent><localleader>gs :Lspsaga signature_help<CR>
 nnoremap <silent><localleader>gd :Lspsaga preview_definition<CR>
-nnoremap <silent><localleader><S-d> :Lspsaga show_cursor_diagnostics<CR>
 
 
 nnoremap <silent><localleader>ca :Lspsaga code_action<CR>
 
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent><localleader>e :Lspsaga show_cursor_diagnostics<CR>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<CR>

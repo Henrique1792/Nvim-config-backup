@@ -3,7 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	Plug 'flazz/vim-colorschemes'
 	Plug 'rafi/awesome-vim-colorschemes'
-	Plug 'machakann/vim-sandwich'
+	Plug 'tpope/vim-surround'
+	" Plug 'machakann/vim-sandwich'
 
 	"tpope block
 	Plug 'tpope/vim-fugitive'
@@ -65,6 +66,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 	"tree-sitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'sedan07/vim-mib'
 
 call plug#end()
 
@@ -102,7 +104,7 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = 'ㄠ'
+let g:airline_symbols.branch = 'ま'
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = '〃'

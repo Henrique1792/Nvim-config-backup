@@ -63,7 +63,7 @@ nmap <silent><localleader>r <C-[>:reg<CR>
 "nmap <silent><Down>   :llast<CR>
 
 noremap <leader>z <C-W>_ \| <c-w>\|
-noremap <leader><S-z> <C-W>=
+noremap <leader>= <C-W>=
 
 
 "fzf - backup
