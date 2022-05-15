@@ -24,7 +24,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'ryanoasis/vim-devicons'
-	Plug 'Yggdroot/indentLine'
+	" Plug 'Yggdroot/indentLine'
 
 
 	"undoTree
@@ -54,10 +54,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/nvim-lsp-installer'
 	Plug 'tami5/lspsaga.nvim'
-	Plug 'hrsh7th/cmp-nvim-lsp'
-	Plug 'hrsh7th/cmp-buffer'
 	
 	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/vim-vsnip'
 
@@ -111,8 +111,8 @@ let g:airline_symbols.maxlinenr = '〃'
 let g:airline_symbols.colnr = 'Ф'
 
 "indentLine
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_showFirstIndentLevel = 1
 
 "fzf
 let g:fzf_layout = { 'down': '15%' }

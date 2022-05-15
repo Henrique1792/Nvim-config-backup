@@ -9,11 +9,11 @@
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent><localleader>n <C-[>:bn<CR>
-noremap <silent><localleader>p <C-[>:bp<CR>
+noremap <silent><localleader>o <C-[>:bn<CR>
+noremap <silent><localleader>i <C-[>:bp<CR>
 noremap <silent><localleader>d <C-[>:bd<CR>
-noremap <silent><localleader>w <C-[>:bw<CR>
-noremap <silent><localleader>W <C-[>:w<CR>
+noremap <silent><localleader>W <C-[>:bw<CR>
+noremap <silent><localleader>w <C-[>:w<CR>
 
 " // We'll get from vim and send it to system clipboard
 " So we'll \pick\ y <leader>y to copy to clipboard!!! (Yeah, just like  guitar bro"

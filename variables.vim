@@ -24,7 +24,7 @@ set shortmess+=Ic
 set encoding=UTF-8
 set mouse=""
 set list 
-set lcs=tab:\|\ 
+set lcs=tab:\|⋅,trail:␣
 set updatetime=100
 set scrolloff=3
 set nofixendofline
@@ -38,7 +38,7 @@ endif
 
 "let stuff
 let mapleader = "\<Space>"
-let maplocalleader = "-"
+let maplocalleader = "\<Space>\<Space>"
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 25
 
