@@ -12,7 +12,7 @@ set undodir=~/.vim/undo
 filetype indent plugin on
 set hidden autoindent modeline showcmd 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
-set ts=4 softtabstop=4 et sw=4 
+set ts=4 softtabstop=4 et sw=4
 " autocmd Filetype *.py, *.js setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 setlocal tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set bg=dark
@@ -24,11 +24,11 @@ set shortmess+=Ic
 set encoding=UTF-8
 set mouse=""
 set list 
-set lcs=tab:\|⋅,trail:␣
+set lcs=tab:\|⋅,trail:␣,eol:⋅
 set updatetime=100
 set scrolloff=3
 set nofixendofline
-set noexpandtab 
+set noexpandtab
 set cc=80
 "hi Normal guibg=NONE ctermbg=NONE
 
@@ -45,7 +45,7 @@ let g:netrw_winsize = 25
 set langmenu=en_US.UTF-8
 language messages en_US.UTF-8
 set gcr= "n-v-c-sm-i-ci-ve:block"
-         
+
 let g:python3_host_prog="$HOME/.pyenv/shims/python3.9"
 let g:python_host_prog="$HOME/.pyenv/shims/python2.7"
 
