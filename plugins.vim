@@ -120,7 +120,8 @@ let g:fzf_layout = { 'down': '15%' }
 
 
 "nnn
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#layout = { 'left': '~20%' }
+" let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 "rainbow
 let g:rainbow_active = 1

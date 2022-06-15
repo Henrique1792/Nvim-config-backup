@@ -9,10 +9,10 @@
 noremap <silent><leader>ev :vsplit $MYVIMRC<CR>
 noremap <silent><leader>sv :so $MYVIMRC<CR>
 
-noremap <silent><localleader>o <C-[>:bn<CR>
-noremap <silent><localleader>i <C-[>:bp<CR>
+noremap <silent><localleader>i <C-[>:bn<CR>
+noremap <silent><localleader>o <C-[>:bp<CR>
 noremap <silent><localleader>d <C-[>:bd<CR>
-noremap <silent><localleader>W <C-[>:bw<CR>
+noremap <silent><localleader>W <C-[>:bw!<CR>
 noremap <silent><localleader>w <C-[>:w<CR>
 
 " // We'll get from vim and send it to system clipboard
