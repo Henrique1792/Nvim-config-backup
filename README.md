@@ -17,3 +17,6 @@ Some autocompletion tools requires installation without setup with `Lspinstall` 
 
 [nvim-lspconfig repo](https://github.com/neovim/nvim-lspconfig)
 
+## Lua Migration
+
+Currently changing from vimscript to complete lua - deal with it.
