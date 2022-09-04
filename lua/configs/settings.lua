@@ -6,7 +6,7 @@
 local opt = vim.opt
 local g = vim.g
 
-local HOME = os.getenv("HOME")
+local home = os.getenv("HOME")
 
 
 -- general
@@ -19,7 +19,7 @@ opt.scrolloff=3
 
 -- etcs
 opt.background="dark"
-opt.cc=80
+opt.cc='80'
 opt.encoding="utf-8"
 opt.fixendofline = false
 opt.guicursor="n-v-c-sm-i-ci-ve:block"
@@ -28,11 +28,11 @@ opt.updatetime=100
 opt.shortmess.append="Ic"
 
 -- syntax
-opt.syntax = true
+vim.cmd("syntax on")
 
 -- cursor behavior
-opt.setcursorcolumn = true
-opt.setcursorline = true
+opt.cursorcolumn = true
+opt.cursorline = true
 
 --leader and localleader
 g.leader=' '
@@ -40,7 +40,7 @@ g.localleader='  '
 
 -- undofile
 opt.undofile = true
-opt.undodir = HOME+"/.vim/undo"
+opt.undodir = home.."/.vim/undo"
 
 -- tabstops and shiftwidths
 opt.tabstop = 4
@@ -75,5 +75,5 @@ opt.hlsearch = true
 opt.incsearch = true
 
 --python path
-g.python3_host_prog=HOME+"/.pyenv/shims/python3.9"
-g.python_host_prog=HOME+"/.pyenv/shims/python2.7"
+g.python3_host_prog=home .. "/.pyenv/shims/python3.9"
+g.python_host_prog=home .. "/.pyenv/shims/python2.7"

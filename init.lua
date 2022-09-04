@@ -1,3 +1,4 @@
-require('configs.settings');
-require('configs.maps');
-require('configs.utils');
+require('configs.settings')
+require('configs.packer')
+require('configs.maps')
+require('configs.utils')
