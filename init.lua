@@ -1,3 +1,3 @@
-require('settings');
-require('maps');
-require('utils');
+require('configs.settings');
+require('configs.maps');
+require('configs.utils');
