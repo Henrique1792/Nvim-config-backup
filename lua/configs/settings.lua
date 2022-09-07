@@ -35,8 +35,8 @@ opt.cursorcolumn = true
 opt.cursorline = true
 
 --leader and localleader
-g.leader=' '
-g.localleader='  '
+g.mapleader=' '
+g.maplocalleader='  '
 
 -- undofile
 opt.undofile = true
