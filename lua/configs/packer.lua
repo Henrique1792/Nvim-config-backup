@@ -11,19 +11,17 @@ return require('packer').startup(function(use)
 
 	use 'flazz/vim-colorschemes'
 	use 'rafi/awesome-vim-colorschemes'
-	use 'tpope/vim-surround'
 
 -- tpope block
+	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-eunuch'
 
--- signify
-	-- if has('nvim') || has('patch-8.0.902')
-	-- 	use 'mhinz/vim-signify'
-	-- else
-	-- 	use 'mhinz/vim-signify', { 'branch': 'legacy' }
-	-- endif
-	use 'junegunn/fzf' -- { 'do': { -> fzf#install() } }
+    --gitsigns 
+    use {
+        'lewis6991/gitsigns.nvim',
+    }
+	--use 'junegunn/fzf' -- { 'do': { -> fzf#install() } }
 	use 'junegunn/fzf.vim'
 
 -- airline
