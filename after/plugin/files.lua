@@ -7,5 +7,7 @@ end
 
 
 -- fzf
-vim.g.fzf_layout={down='15%'}
-Map('n','<leader>',':Files<CR>',{noremap=true, silent=true})
+Map('n','<leader>f',':FzfLua files<CR>',{noremap=true, silent=true})
+Map('n','<leader>?',':FzfLua live_grep<CR>',{noremap=true, silent=true})
+Map('n','<leader>/',':FzfLua grep_curbuf<CR>',{noremap=true, silent=true})
+Map('n','<leader>Q',':FzfLua buffers<CR>',{noremap=true, silent=true})

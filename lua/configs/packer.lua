@@ -1,7 +1,7 @@
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
   -- lualine
   use {
@@ -21,9 +21,11 @@ return require('packer').startup(function(use)
     use {
         'lewis6991/gitsigns.nvim',
     }
-	--use 'junegunn/fzf' -- { 'do': { -> fzf#install() } }
-	use 'junegunn/fzf.vim'
 
+    use { 'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'kyazdani42/nvim-web-devicons' }
+    }
 -- airline
 -- 	use 'vim-airline/vim-airline'
 -- 	use 'vim-airline/vim-airline-themes'
@@ -52,7 +54,10 @@ return require('packer').startup(function(use)
 
 
 -- nnn file management
-	use 'mcchrish/nnn.vim'
+    use {
+        "luukvbaal/nnn.nvim",
+        config = function() require("nnn").setup() end
+    }
 
 -- lsp
 	use 'neovim/nvim-lspconfig'
@@ -71,4 +76,13 @@ return require('packer').startup(function(use)
 -- tree-sitter
 	use 'nvim-treesitter/nvim-treesitter' --, {'do': ':TSUpdate'}
 	use 'sedan07/vim-mib'
-end)
+end,
+
+--    config = {
+--        display = {
+--            open_fn = function()
+--                return require('packer.util').float({ border = 'bottom' })
+--            end
+--        }
+--    }
+})

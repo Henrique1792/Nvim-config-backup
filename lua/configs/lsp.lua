@@ -1,4 +1,11 @@
-lua << EOF
+local keymap = vim.keymap
+local opt = vim.opt
+
+-- trying kindly to remove verbosing
+function Map(mode, sequence, command, params)
+	keymap.set(mode, sequence, command, params)
+end
+
 --Required packages
 --lspconfig and lspinstall
 local lspconfig = require'lspconfig'
@@ -14,10 +21,10 @@ local saga = require 'lspsaga'
 -- functions
 
 local on_attach = function(client, bufnr)
--- local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end  
+local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }  
+  local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
@@ -106,18 +113,12 @@ end
 -- comment
 comment.setup()
 
-EOF
 
-" Saga setup
-set completeopt=menuone,noinsert,noselect
-nnoremap <silent><localleader>k :Lspsaga hover_doc<CR>
-
-nnoremap <silent><localleader>gs :Lspsaga signature_help<CR>
-nnoremap <silent><localleader>gd :Lspsaga preview_definition<CR>
-
-
-nnoremap <silent><localleader>ca :Lspsaga code_action<CR>
-
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent><localleader>e :Lspsaga show_cursor_diagnostics<CR>
-nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<CR>
+-- Saga setup
+opt.completeopt={'menuone','noinsert','noselect'}
+Map('n','<localleader>gs',':Lspsaga signature_help<CR>',{noremap=true, silent=true})
+Map('n','<localleader>gd',':Lspsaga preview_definition<CR>',{noremap=true, silent=true})
+Map('n','<localleader>ca',':Lspsaga code_action<CR>',{noremap=true, silent=true})
+Map('n','<localleader>]e',':Lspsaga diagnostic_jump_next<CR>',{noremap=true, silent=true})
+Map('n','<localleader>[e',':Lspsaga diagnostic_jump_prev<CR>',{noremap=true, silent=true})
+Map('n','<localleader>K',':Lspsaga show_cursor_diagnostics<CR>',{noremap=true, silent=true})

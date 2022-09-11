@@ -99,15 +99,15 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  fzf = {
+  ["fzf-lua"] = {
     loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/fzf",
-    url = "https://github.com/junegunn/fzf"
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
   },
-  ["fzf.vim"] = {
+  ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/fzf.vim",
-    url = "https://github.com/junegunn/fzf.vim"
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["goyo.vim"] = {
     loaded = true,
@@ -134,10 +134,11 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["nnn.vim"] = {
+  ["nnn.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bnnn\frequire\0" },
     loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/nnn.vim",
-    url = "https://github.com/mcchrish/nnn.vim"
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/nnn.nvim",
+    url = "https://github.com/luukvbaal/nnn.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -238,6 +239,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nnn.nvim
+time([[Config for nnn.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bnnn\frequire\0", "config", "nnn.nvim")
+time([[Config for nnn.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

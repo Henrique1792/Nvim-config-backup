@@ -17,8 +17,6 @@ function Map(mode, sequence, command, params)
 	keymap.set(mode, sequence, command, params)
 end
 
-
-
 Map('n','<leader>ev',':vsplit $MYVIMRC<CR>',{noremap=true, silent=true})
 Map('n','<leader>sv',':so $MYVIMRC<CR>',{noremap=true, silent=true})
 
@@ -34,9 +32,7 @@ Map('n','<F3>',':noh<CR>',{silent=true})
 Map('n','<F2>',':tabnew<CR>',{silent=true})
 Map('n','<F4>',':tabclose<CR>',{silent=true})
 
--- We'll fix register behaviour later.
--- Map('n','<F7>',':let @+=expand("%:p")<CR><C-[>:let @*=expand("%:p")<CR>', {noremap=true, silent=true})
--- Map('n','<F8>',':let @+=expand("%:p:h")<CR><C-[>:let @*=expand("%:p:h")<CR>', {noremap=true, silent=true})
+
 
 Map('n','<leader>q',':<C-W>q<CR>',{silent=true})
 Map('n','<leader>\\',':vsplit<CR><C-[><C-W>l',{silent=true})
@@ -53,4 +49,11 @@ Map('n','<localleader><Down>','<C-W>-',{silent=true})
 Map('n','<localleader><Up>','<C-W>+',{silent=true})
 Map('n','<localleader><Right>','<C-W>>',{silent=true})
 Map('n','<localleader>r','<C-[>:reg<CR>',{silent=true})
+
+-- too lazy to set this properly - f* the police by now
+vim.cmd('command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor')
+vim.cmd('nnoremap <leader>y :let @+=getreg(\'\"\')<CR><C-[>:let @*=getreg(\'\"\')<CR>:echo \"yank!\"<CR>')
+
+--paste is silent 'cuz answer is obvious
+vim.cmd('nnoremap <silent><leader>p :let @"=getreg(\'*\')<CR><C-[>:let @q=getreg(\'+\')<CR>')
 

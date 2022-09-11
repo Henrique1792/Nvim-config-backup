@@ -69,7 +69,6 @@ opt.wildignore = {'*.swp','*.bak','*.pyc','*.class','*.o'}
 opt.foldmethod="indent"
 opt.foldlevel=99
 
-
 -- search behavior
 opt.hlsearch = true
 opt.incsearch = true
