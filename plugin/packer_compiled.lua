@@ -134,11 +134,10 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["nnn.nvim"] = {
-    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bnnn\frequire\0" },
+  ["nnn.vim"] = {
     loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/nnn.nvim",
-    url = "https://github.com/luukvbaal/nnn.nvim"
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/nnn.vim",
+    url = "https://github.com/mcchrish/nnn.vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -176,6 +175,16 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/jiaoshijie/undotree"
+  },
   ["vim-bujo"] = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-bujo",
@@ -185,11 +194,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
     url = "https://github.com/flazz/vim-colorschemes"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-eunuch"] = {
     loaded = true,
@@ -201,25 +205,10 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-gutentags"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-gutentags",
-    url = "https://github.com/ludovicchabant/vim-gutentags"
-  },
   ["vim-livedown"] = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-livedown",
     url = "https://github.com/shime/vim-livedown"
-  },
-  ["vim-mib"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-mib",
-    url = "https://github.com/sedan07/vim-mib"
-  },
-  ["vim-mundo"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-mundo",
-    url = "https://github.com/simnalamburt/vim-mundo"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -239,10 +228,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nnn.nvim
-time([[Config for nnn.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\bnnn\frequire\0", "config", "nnn.nvim")
-time([[Config for nnn.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

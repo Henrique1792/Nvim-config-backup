@@ -3,7 +3,7 @@
 
 return require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'
-  -- lualine
+  -- lines 
   use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -26,14 +26,15 @@ return require('packer').startup({function(use)
     -- optional for icon support
     requires = { 'kyazdani42/nvim-web-devicons' }
     }
--- airline
--- 	use 'vim-airline/vim-airline'
--- 	use 'vim-airline/vim-airline-themes'
-	use 'ryanoasis/vim-devicons'
 
 
 -- undoTree
-	use 'simnalamburt/vim-mundo'
+    use {
+        "jiaoshijie/undotree",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    }
 -- Comments
 	use 'numToStr/Comment.nvim'
 -- LineDiff
@@ -41,9 +42,9 @@ return require('packer').startup({function(use)
 
 
 -- Note taking
-	use 'junegunn/goyo.vim'
-	use 'junegunn/limelight.vim'
-	use 'vuciv/vim-bujo'
+	-- use 'junegunn/goyo.vim'
+	-- use 'junegunn/limelight.vim'
+	-- use 'vuciv/vim-bujo'
 
 -- markdown note support
 	use 'shime/vim-livedown'
@@ -54,10 +55,7 @@ return require('packer').startup({function(use)
 
 
 -- nnn file management
-    use {
-        "luukvbaal/nnn.nvim",
-        config = function() require("nnn").setup() end
-    }
+    use 'mcchrish/nnn.vim'
 
 -- lsp
 	use 'neovim/nvim-lspconfig'
@@ -70,12 +68,8 @@ return require('packer').startup({function(use)
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
 
--- tags 
-	use 'ludovicchabant/vim-gutentags'
-
 -- tree-sitter
 	use 'nvim-treesitter/nvim-treesitter' --, {'do': ':TSUpdate'}
-	use 'sedan07/vim-mib'
 end,
 
 --    config = {

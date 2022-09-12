@@ -54,13 +54,12 @@ opt.smartcase = true
 
 -- list
 opt.listchars = {tab='|⋅',trail='␣',eol='⋅'}
-opt.list = true
 
 -- swapfile
 opt.swapfile = false
 
 -- backspace behavior
-opt.backspace={indent=true,eol=true,start=true}
+vim.cmd('set backspace=indent,eol,start')
 
 -- wildignore
 opt.wildignore = {'*.swp','*.bak','*.pyc','*.class','*.o'}
