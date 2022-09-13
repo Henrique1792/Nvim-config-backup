@@ -53,7 +53,12 @@ opt.smarttab = true
 opt.smartcase = true
 
 -- list
-opt.listchars = {tab='|⋅',trail='␣',eol='⋅'}
+opt.list=true
+opt.listchars = {
+    tab='|⋅',
+    trail='␣',
+    eol='⋅'
+}
 
 -- swapfile
 opt.swapfile = false
