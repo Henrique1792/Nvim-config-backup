@@ -3,14 +3,14 @@ vim.cmd("colorscheme gruvbox")
 --lualine
 local lualine=require('lualine')
 lualine.setup {
-    options = { theme = 'gruvbox_dark' },
+    options = { theme = 'ayu' },
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {'buffers'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
+        lualine_y = {'progress', 'location'},
+        lualine_z = {'filename'}
   },
 
 }

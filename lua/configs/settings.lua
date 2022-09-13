@@ -18,15 +18,16 @@ opt.relativenumber = true
 opt.scrolloff=3
 
 -- etcs
-opt.background="dark"
+opt.bg="dark"
 opt.cc='80'
 opt.encoding="utf-8"
 opt.fixendofline = false
 opt.guicursor="n-v-c-sm-i-ci-ve:block"
 opt.langmenu="en_US.UTF-8"
+vim.cmd('language messages en_US.UTF-8')
 opt.updatetime=100
 opt.shortmess.append="Ic"
-
+vim.cmd('filetype indent plugin on')
 -- syntax
 vim.cmd("syntax on")
 
@@ -46,19 +47,15 @@ opt.undodir = home.."/.vim/undo"
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 0
-opt.expandtab = true
+opt.expandtab = false
 opt.smarttab = true
 
 -- smartcase
 opt.smartcase = true
 
 -- list
-opt.list=true
-opt.listchars = {
-    tab='|⋅',
-    trail='␣',
-    eol='⋅'
-}
+opt.list = true
+opt.listchars = {tab='|⋅',trail='␣',eol='⋅'}
 
 -- swapfile
 opt.swapfile = false
@@ -68,6 +65,7 @@ vim.cmd('set backspace=indent,eol,start')
 
 -- wildignore
 opt.wildignore = {'*.swp','*.bak','*.pyc','*.class','*.o'}
+opt.wildoptions.append='pum'
 
 -- foldmethod
 opt.foldmethod="indent"
