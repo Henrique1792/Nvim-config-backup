@@ -109,16 +109,6 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["goyo.vim"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/goyo.vim",
-    url = "https://github.com/junegunn/goyo.vim"
-  },
-  ["limelight.vim"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/limelight.vim",
-    url = "https://github.com/junegunn/limelight.vim"
-  },
   ["linediff.vim"] = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/linediff.vim",
@@ -134,6 +124,16 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["nnn.vim"] = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/nnn.vim",
@@ -143,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -184,11 +179,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/jiaoshijie/undotree"
-  },
-  ["vim-bujo"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/vim-bujo",
-    url = "https://github.com/vuciv/vim-bujo"
   },
   ["vim-colorschemes"] = {
     loaded = true,

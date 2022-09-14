@@ -9,10 +9,15 @@ end
 --Required packages
 --lspconfig and lspinstall
 local lspconfig = require'lspconfig'
-local lsp_install = require('nvim-lsp-installer')
-local servers = require('nvim-lsp-installer.servers' )
 local comment = require('Comment')
 
+local mason=require('mason').setup()
+local masonlspconfig=require('mason-lspconfig')
+
+masonlspconfig.setup({
+	ensure_installed = {"gopls", "sumneko_lua", "clangd", "bashls"}
+
+})
 -- lspsaga and cmp
 local cmp = require('cmp')
 local saga = require 'lspsaga'
@@ -36,10 +41,6 @@ local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 end
 
 
-lsp_install.on_server_ready(function(server)
-    local opts = {}
-    server:setup(opts)
-end)
 
 -- saga configuration
 saga.init_lsp_saga {
@@ -64,7 +65,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
   indent = {
-    enable = false,
+    enable = true,
     disable = {},
   },
   ensure_installed = {
@@ -103,12 +104,6 @@ require'nvim-treesitter.configs'.setup {
   })
 
  -- Setup lspconfig.
-for _, server in ipairs(servers) do
-  lspconfig[server].setup{
-	  on_attach = on_attach
-	  {capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())}
-  }
-end
 
 -- comment
 comment.setup()
