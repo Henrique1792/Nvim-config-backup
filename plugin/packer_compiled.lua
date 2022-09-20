@@ -109,15 +109,15 @@ _G.packer_plugins = {
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
   ["linediff.vim"] = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/linediff.vim",
     url = "https://github.com/AndrewRadev/linediff.vim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/harry/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/tami5/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -133,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/harry/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["navigator.lua"] = {
+    loaded = true,
+    path = "/home/harry/.local/share/nvim/site/pack/packer/start/navigator.lua",
+    url = "https://github.com/ray-x/navigator.lua"
   },
   ["nnn.vim"] = {
     loaded = true,

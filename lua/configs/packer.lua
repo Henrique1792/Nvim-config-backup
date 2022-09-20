@@ -1,67 +1,73 @@
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup({function(use)
-  use 'wbthomason/packer.nvim'
-  -- lines 
-  use {
-	  'nvim-lualine/lualine.nvim',
-	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+return require('packer').startup({ function(use)
+	use 'wbthomason/packer.nvim'
+	-- lines
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 
 	use 'flazz/vim-colorschemes'
 	use 'rafi/awesome-vim-colorschemes'
 
--- tpope block
+	-- tpope block
 	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-eunuch'
 
-    --gitsigns 
-    use {
-        'lewis6991/gitsigns.nvim',
-    }
+	--gitsigns
+	use {
+		'lewis6991/gitsigns.nvim',
+	}
 
-    use { 'ibhagwan/fzf-lua',
-    -- optional for icon support
-    requires = { 'kyazdani42/nvim-web-devicons' }
-    }
+	use { 'ibhagwan/fzf-lua',
+		-- optional for icon support
+		requires = { 'kyazdani42/nvim-web-devicons' }
+	}
 
 
--- undoTree
-    use {
-        "jiaoshijie/undotree",
-        requires = {
-            "nvim-lua/plenary.nvim",
-        },
-    }
--- Comments
+	-- undoTree
+	use {
+		"jiaoshijie/undotree",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	}
+	-- Comments
 	use 'numToStr/Comment.nvim'
--- LineDiff
+	-- LineDiff
 	use 'AndrewRadev/linediff.vim'
 
 
--- Note taking
+	-- Note taking
 	-- use 'junegunn/goyo.vim'
 	-- use 'junegunn/limelight.vim'
 	-- use 'vuciv/vim-bujo'
 
--- markdown note support
+	-- markdown note support
 	use 'shime/vim-livedown'
 	use 'vimwiki/vimwiki'
 
--- color matching chars
+	-- color matching chars
 	use 'p00f/nvim-ts-rainbow'
 
 
--- nnn file management
-    use 'mcchrish/nnn.vim'
+	-- nnn file management
+	use 'mcchrish/nnn.vim'
 
--- lsp
+	-- lsp
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
-	use 'tami5/lspsaga.nvim'
+	use({
+		'ray-x/navigator.lua',
+		requires = {
+			{ 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+			{ 'neovim/nvim-lspconfig' },
+		},
+	})
 
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
@@ -69,15 +75,7 @@ return require('packer').startup({function(use)
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
 
--- tree-sitter
+	-- tree-sitter
 	use 'nvim-treesitter/nvim-treesitter' --, {'do': ':TSUpdate'}
 end,
-
---    config = {
---        display = {
---            open_fn = function()
---                return require('packer.util').float({ border = 'bottom' })
---            end
---        }
---    }
 })
