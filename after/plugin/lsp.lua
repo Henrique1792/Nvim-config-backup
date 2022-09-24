@@ -12,20 +12,27 @@ local comment = require('Comment')
 
 local mason = require('mason')
 mason.setup()
-local masonlspconfig = require('mason-lspconfig')
 
+local masonlspconfig = require('mason-lspconfig')
 masonlspconfig.setup({
-	ensure_installed = { "gopls", "sumneko_lua", "clangd", "bashls" }
+	ensure_installed = { "gopls", "sumneko_lua", "clangd", "bashls" },
+})
+masonlspconfig.setup_handlers({
+	function(server_name) -- default handler (optional)
+		require("lspconfig")[server_name].setup {}
+	end,
 
 })
 -- lspsaga and cmp
-local cmp = require 'cmp'
--- local saga = require 'lspsaga'
-local navigator = require 'navigator'
+local cmp = require('cmp')
+local navigator = require('navigator')
 navigator.setup({
 	mason = true,
 	icons = {
 		icons = false,
+	},
+	lsp = {
+		disable_lsp = 'all',
 	},
 	keymaps = {
 		{ key = '<localleader>gd', func = require('navigator.definition').definition, desc = 'definition' },
@@ -39,35 +46,6 @@ navigator.setup({
 	},
 
 })
-
-
--- functions
-
--- local on_attach = function(client, bufnr)
--- 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
---
--- 	-- Mappings.
--- 	local opts = { noremap = true, silent = true }
--- 	buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
--- 	buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
---
--- 	--...
---
--- 	-- setup completion
--- 	cmp.on_attach(client, bufnr)
---
--- end
-
-
-
--- saga configuration
--- saga.init_lsp_saga {
---   error_sign = '✗',
---   warn_sign = 'Ⅺ',
---   hint_sign = 'ツ',
---   infor_sign = 'Δ',
---   border_style = "round",
--- }
 
 
 -- tree-sitter
@@ -129,9 +107,3 @@ comment.setup()
 
 -- Saga setup
 opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
--- Map('n','<localleader>gs',':Lspsaga signature_help<CR>',{noremap=true, silent=true})
--- Map('n','<localleader>gd',':Lspsaga preview_definition<CR>',{noremap=true, silent=true})
--- Map('n','<localleader>ca',':Lspsaga code_action<CR>',{noremap=true, silent=true})
--- Map('n','<localleader>]e',':Lspsaga diagnostic_jump_next<CR>',{noremap=true, silent=true})
--- Map('n','<localleader>[e',':Lspsaga diagnostic_jump_prev<CR>',{noremap=true, silent=true})
--- Map('n','<localleader>K',':Lspsaga show_cursor_diagnostics<CR>',{noremap=true, silent=true})
