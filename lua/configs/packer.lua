@@ -62,12 +62,11 @@ return require('packer').startup({ function(use)
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
 	use({
-		'ray-x/navigator.lua',
-		requires = {
-			{ 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-		},
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+		end,
 	})
-
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'

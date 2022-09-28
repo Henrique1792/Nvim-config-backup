@@ -41,8 +41,7 @@ Map('n','<localleader><Up>','<C-W>+',{silent=true})
 Map('n','<localleader><Right>','<C-W>>',{silent=true})
 Map('n','<localleader>r','<C-[>:reg<CR>',{silent=true})
 
-
-Map('n','<leader>z','<C-W>_ \\| <c-w>\\|',{silent=true, noremap=true})
+Map('n','<leader>z','<C-W>_ | <c-w>|',{silent=true, noremap=true})
 Map('n','<leader>=','<C-W>=',{silent=true, noremap=true})
 
 -- too lazy to set this properly - f* the police by now
