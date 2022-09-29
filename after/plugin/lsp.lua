@@ -25,83 +25,69 @@ masonlspconfig.setup_handlers({
 })
 -- lspsaga and cmp
 local cmp = require('cmp')
--- local navigator = require('navigator')
--- navigator.setup({
--- 	mason = true,
--- 	icons = {
--- 		icons = false,
--- 	},
--- 	lsp = {
--- 		disable_lsp = {},
--- 	},
--- 	keymaps = {
--- 		{ key = '<localleader>gd', func = require('navigator.definition').definition, desc = 'definition' },
--- 		{ key = '<localleader>gD', func = vim.lsp.buf.declaration, desc = 'declaration' },
--- 		{ key = '<localleader>gp', func = require('navigator.definition').definition_preview, desc = 'definition_preview' },
--- 		{ key = '<localleader>ca', mode = 'n', func = require('navigator.codeAction').code_action, desc = 'code_action' },
--- 		{ key = '<localleader>k', func = require('navigator.dochighlight').hi_symbol, desc = 'hi_symbol' },
--- 		{ key = ']e', func = vim.diagnostic.goto_next, desc = 'next diagnostics' },
--- 		{ key = '[e', func = vim.diagnostic.goto_prev, desc = 'prev diagnostics' },
---
--- 	},
---
--- })
 
 --saga
-local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
-saga.init_lsp_saga()
+saga.init_lsp_saga({
+	diagnostic_header = {
+		'✗',
+		'Ⅺ',
+		'ツ',
+		'Δ',
+	}
+})
 
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide
 -- when you use action in finder like open vsplit then you can
 -- use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+
+Map("n", "<localleader>gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+Map({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
--- Rename
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+-- Mass rename
+Map("n", "<localleader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Peek Definition
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+Map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+Map("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+Map("n", "<leader>sd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+Map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+Map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Only jump to error
-keymap("n", "[E", function()
+Map("n", "[E", function()
   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
-keymap("n", "]E", function()
+Map("n", "]E", function()
   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+Map("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+Map("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- Float terminal
-keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
+Map("n", "<leader><A-t>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
 -- if you want pass somc cli command into terminal you can do like this
--- open lazygit in lspsaga float terminal
-keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
+-- open tig in lspsaga float terminal
+-- Map("n", "<localleader>t", "<cmd>Lspsaga open_floaterm tig<CR>", { silent = true })
 -- close floaterm
-keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
+Map("t", "<A-q>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
 
 
 -- tree-sitter
@@ -138,6 +124,9 @@ cmp.setup({
 			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
 		end,
 	},
+	completion ={
+		keyword_length = 1,
+	},
 	mapping = {
 		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -151,11 +140,11 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		-- For vsnip user.
 		{ name = 'vsnip' },
+	},
+	{
 		{ name = 'buffer' },
-	}
+	},
 })
-
--- Setup lspconfig.
 
 -- comment
 comment.setup()
