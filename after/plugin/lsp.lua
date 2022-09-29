@@ -127,6 +127,23 @@ cmp.setup({
 	completion ={
 		keyword_length = 1,
 	},
+	formatting = {
+		format = function(entry, vim_item)
+			vim_item.menu = ({
+				nvim_lsp = "[LSP]",
+				spell = "[Spellings]",
+				buffer = "[Buffer]",
+				ultisnips = "[Snip]",
+				treesitter = "[Treesitter]",
+				calc = "[Calculator]",
+				nvim_lua = "[Lua]",
+				path = "[Path]",
+				nvim_lsp_signature_help = "[Signature]",
+				cmdline = "[Vim Command]"
+			})[entry.source.name]
+			return vim_item
+		end,
+	},
 	mapping = {
 		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
