@@ -1,4 +1,5 @@
 .netrwhist
 bujo.vim
 wiki.vim
+plugin/packer_compiled.lua
 tags
