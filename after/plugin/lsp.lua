@@ -9,20 +9,26 @@ end
 --Required packages
 --lspconfig and lspinstall
 local comment = require('Comment')
+local lspconfig = require('lspconfig')
 
 local mason = require('mason')
 mason.setup()
 
 local masonlspconfig = require('mason-lspconfig')
 masonlspconfig.setup({
-	ensure_installed = { "pyright", "gopls", "sumneko_lua", "clangd", "bashls" },
+	ensure_installed = { "html", "pyright", "gopls", "sumneko_lua", "clangd", "bashls" },
 })
-masonlspconfig.setup_handlers({
-	function(server_name) -- default handler (optional)
-		require("lspconfig")[server_name].setup {}
-	end,
 
+
+masonlspconfig.setup_handlers({
+function (server_name) -- default handler (optional)
+	lspconfig[server_name].setup{}
+end,
 })
+
+
+
+
 -- lspsaga and cmp
 local cmp = require('cmp')
 
@@ -43,7 +49,7 @@ saga.init_lsp_saga({
 -- when you use action in finder like open vsplit then you can
 -- use <C-t> to jump back
 
-Map("n", "<localleader>gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+Map("n", "<leader>gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
 Map({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
@@ -55,7 +61,7 @@ Map("n", "<localleader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-Map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+Map("n", "<leader>Pd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 Map("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })

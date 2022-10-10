@@ -54,6 +54,9 @@ return require('packer').startup({ function(use)
 	use 'p00f/nvim-ts-rainbow'
 
 
+	-- register management
+	use 'gennaro-tedesco/nvim-peekup'
+
 	-- nnn file management
 	use 'mcchrish/nnn.vim'
 

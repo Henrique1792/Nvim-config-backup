@@ -76,5 +76,5 @@ opt.hlsearch = true
 opt.incsearch = true
 
 --python path
-g.python3_host_prog = home .. "/.pyenv/shims/python3.8"
+g.python3_host_prog = home .. "/.pyenv/shims/python3"
 g.python_host_prog = home .. "/.pyenv/shims/python2.7"
