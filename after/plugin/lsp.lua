@@ -27,14 +27,11 @@ end,
 })
 
 
-
-
 -- lspsaga and cmp
 local cmp = require('cmp')
 
 --saga
 local saga = require('lspsaga')
-
 saga.init_lsp_saga({
 	diagnostic_header = {
 		'✗',
@@ -45,9 +42,6 @@ saga.init_lsp_saga({
 })
 
 -- Lsp finder find the symbol definition implement reference
--- if there is no implement it will hide
--- when you use action in finder like open vsplit then you can
--- use <C-t> to jump back
 
 Map("n", "<leader>gf", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
@@ -61,7 +55,7 @@ Map("n", "<localleader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
-Map("n", "<leader>Pd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+Map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 Map("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
@@ -171,6 +165,18 @@ cmp.setup({
 
 -- comment
 comment.setup()
+
+
+-- null-ls (non-lsp also deserves love)
+
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.diagnostics.djlint,
+        require("null-ls").builtins.completion.spell,
+    },
+})
+
+
 
 
 -- Saga setup

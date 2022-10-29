@@ -3,7 +3,8 @@
 
 return require('packer').startup({ function(use)
 	use 'wbthomason/packer.nvim'
-	-- lines
+	-- aesthetics
+	-- lualine
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -15,7 +16,6 @@ return require('packer').startup({ function(use)
 	-- tpope block
 	use 'tpope/vim-surround'
 	use 'tpope/vim-fugitive'
-	use 'tpope/vim-eunuch'
 
 	--gitsigns
 	use {
@@ -50,9 +50,8 @@ return require('packer').startup({ function(use)
 	use 'shime/vim-livedown'
 	use 'vimwiki/vimwiki'
 
-	-- color matching chars
+	-- color matching brackets/...
 	use 'p00f/nvim-ts-rainbow'
-
 
 	-- register management
 	use 'gennaro-tedesco/nvim-peekup'
@@ -73,8 +72,13 @@ return require('packer').startup({ function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'
+
+	-- vsnip stuff
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
+
+	-- null-ls
+	use 'jose-elias-alvarez/null-ls.nvim'
 
 	-- tree-sitter
 	use 'nvim-treesitter/nvim-treesitter' --, {'do': ':TSUpdate'}
