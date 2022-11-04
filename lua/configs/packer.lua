@@ -12,6 +12,7 @@ return require('packer').startup({ function(use)
 
 	use 'flazz/vim-colorschemes'
 	use 'rafi/awesome-vim-colorschemes'
+	use 'folke/tokyonight.nvim'
 
 	-- tpope block
 	use 'tpope/vim-surround'

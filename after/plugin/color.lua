@@ -1,4 +1,5 @@
-vim.cmd("colorscheme gruvbox")
+vim.cmd("set background=dark")
+vim.cmd('colorscheme tokyonight-moon')
 
 --lualine
 local lualine = require('lualine')
@@ -17,7 +18,11 @@ local colors = {
   magenta  = '#c678dd',
   blue     = '#51afef',
   red      = '#ec5f67',
+  tnight_bar =  "#292e42"
 }
+-- tokyonight small fix
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg=0, bg=colors.tnight_bar })
+
 
 local conditions = {
   buffer_not_empty = function()
@@ -94,7 +99,7 @@ ins_left {
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
+      n = colors.violet,
       i = colors.green,
       v = colors.blue,
       [''] = colors.blue,
@@ -187,14 +192,14 @@ ins_right {
 ins_right {
   'fileformat',
   fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.green, gui = 'bold' },
+  icons_enabled = true,
+  color = { fg = colors.green },
 }
 
 ins_right {
   'branch',
   icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
+  color = { fg = colors.green, gui = 'bold' },
 }
 
 ins_right {
