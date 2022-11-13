@@ -70,6 +70,7 @@ return require('packer').startup({ function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-nvim-lsp'
+	use 'onsails/lspkind.nvim'
 
 	-- vsnip stuff
 	use 'hrsh7th/cmp-vsnip'
@@ -77,6 +78,7 @@ return require('packer').startup({ function(use)
 
 	-- null-ls
 	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'jayp0521/mason-null-ls.nvim'
 
 	-- tree-sitter
 	use 'nvim-treesitter/nvim-treesitter' --, {'do': ':TSUpdate'}
