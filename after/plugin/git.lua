@@ -46,6 +46,7 @@ require('gitsigns').setup{
 }
 --git related maps
 Map('n', '<F5>', ':Gvdiffsplit!<CR>',{noremap=true})
+Map('n', '<F8>', ':FzfLua git_bcommits<CR>',{noremap=true})
 Map('n', '<F9>', ':FzfLua git_commits<CR>',{noremap=true})
 Map('n', '<F12>', ':Git blame<CR>',{noremap=true})
 

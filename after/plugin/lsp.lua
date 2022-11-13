@@ -52,9 +52,6 @@ Map({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 Map("n", "<localleader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Peek Definition
--- you can edit the definition file in this flaotwindow
--- also support open/vsplit/etc operation check definition_action_keys
--- support tagstack C-t jump back
 Map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
@@ -80,15 +77,6 @@ Map("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
 Map("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
-
--- Float terminal
-Map("n", "<leader><A-t>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
--- if you want pass somc cli command into terminal you can do like this
--- open tig in lspsaga float terminal
--- Map("n", "<localleader>t", "<cmd>Lspsaga open_floaterm tig<CR>", { silent = true })
--- close floaterm
-Map("t", "<A-q>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
-
 
 -- tree-sitter
 require 'nvim-treesitter.configs'.setup {
@@ -180,4 +168,3 @@ require("null-ls").setup({
 
 
 -- Saga setup
-opt.completeopt = { 'menuone', 'noinsert', 'noselect' }

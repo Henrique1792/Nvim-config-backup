@@ -25,5 +25,3 @@ vim.cmd('command! -bang WatchForChanges                  :call WatchForChanges(@
 vim.cmd('command! -bang WatchForChangesWhileInThisBuffer :call WatchForChanges(@%,  {\'toggle\': 1, \'autoread\': <bang>0, \'while_in_this_buffer_only\': 1})')
 vim.cmd('command! -bang WatchForChangesAllFile :call WatchForChanges(\'*\', {\'toggle\': 1, \'autoread\': <bang>0})')
 
---peekup
-local peekup = require('nvim-peekup.config')
