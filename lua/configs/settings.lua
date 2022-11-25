@@ -15,9 +15,9 @@ opt.relativenumber = true
 opt.encoding = "utf-8"
 opt.fixendofline = false
 opt.langmenu = "en_US.UTF-8"
-vim.cmd('language messages en_US.UTF-8')
 opt.updatetime = 100
 opt.shortmess.append = "Ic"
+vim.cmd('language en_US.UTF-8')
 
 --leader and localleader
 g.mapleader = ' '

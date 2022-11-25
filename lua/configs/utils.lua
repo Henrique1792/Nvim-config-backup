@@ -22,10 +22,10 @@ opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 
 
 --linewrap
-opt.wrap=false
+-- opt.wrap=false
 
 -- clipboard behavior
-opt.clipboard:append("unnamedplus")
+-- opt.clipboard:append("unnamedplus")
 
 
 -- file dependant configs

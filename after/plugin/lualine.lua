@@ -196,7 +196,7 @@ ins_right {
 ins_right {
   'branch',
   icon = '',
-  color = { fg = colors.green, gui = 'bold' },
+  color = { fg = colors.green},
 }
 
 ins_right {

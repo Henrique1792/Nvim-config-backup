@@ -24,6 +24,8 @@ Map('n','<F3>',':noh<CR>',{silent=true})
 Map('n','<F2>',':tabnew<CR>',{silent=true})
 Map('n','<F4>',':tabclose<CR>',{silent=true})
 Map('n','<F6>',':only!<CR>',{noremap=true, silent=true})
+Map('n','<F7>',':let @+=@%<CR><C-[>:let @*=@%<CR>',{noremap=true,silent=true})
+Map('n','<leader><F7>',':let @+=expand("%:h:p")<CR><C-[>:let @*=expand("%:h:p")<CR>',{noremap=true,silent=true})
 
 Map('n','<leader>q',':<C-W>q<CR>',{silent=true})
 Map('n','<leader>\\',':vsplit<CR><C-[><C-W>l',{silent=true})
