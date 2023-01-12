@@ -13,11 +13,10 @@ opt.relativenumber = true
 
 -- etcs
 opt.encoding = "utf-8"
+vim.api.nvim_exec('language en_US.UTF-8', true)
 opt.fixendofline = false
-opt.langmenu = "en_US.UTF-8"
 opt.updatetime = 100
 opt.shortmess.append = "Ic"
-vim.cmd('language en_US.UTF-8')
 
 --leader and localleader
 g.mapleader = ' '
@@ -42,8 +41,7 @@ opt.listchars = { tab = '|⋅', trail = '␣', eol = '⋅' }
 opt.swapfile = false
 
 -- backspace behavior
-vim.cmd('set backspace=indent,eol,start')
-
+opt.backspace='indent,eol,start'
 -- wildignore
 opt.wildignore = { '*.swp', '*.bak', '*.pyc', '*.class', '*.o' }
 opt.wildoptions.append = 'pum'

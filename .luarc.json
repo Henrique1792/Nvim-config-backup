@@ -2,6 +2,36 @@
     "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
     "Lua.diagnostics.globals": [
         "vim",
-        "kind_icons"
+        "kind_icons",
+        "cmp_mappings"
+    ],
+    "Lua.workspace.library": [
+        "/home/harry/.config/nvim",
+        "/home/harry/.local/share/nvim/site",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/LuaSnip",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/mason.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+        "/usr/local/share/nvim/runtime",
+        "/usr/local/lib/nvim",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
+        "/home/harry/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after",
+        "${3rd}/luassert/library"
     ]
 }
