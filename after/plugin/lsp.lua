@@ -53,6 +53,12 @@ local opts = {buffer = bufnr, remap=false, silent=true}
 	Map("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end , opts)
 	Map("n", "<leader>ca", function() vim.lsp.buf.code_action() end , opts)
 	Map("n", "<leader>d", function() vim.diagnostic.open_float() end, opts)
+	Map("n", "<localleader>ds", function() vim.lsp.buf.document_symbol() end, opts)
+
+	Map("n", "<localleader>q","<cmd>cexpr []<CR><cmd>echo 'qf clean!'<CR>" ,opts)
+	Map("n", "<localleader>co","<cmd>copen <CR>" ,opts)
+	Map("n", "<leader>]", function() vim.lsp.buf.incoming_calls() end, opts)
+	Map("n", "<leader>[", function() vim.diagnostic.outgoing_calls() end, opts)
 	Map("n", "]d", function() vim.diagnostic.goto_next() end, opts)
 	Map("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
 	Map("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR}) end, opts)
