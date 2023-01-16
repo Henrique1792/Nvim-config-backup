@@ -4,7 +4,7 @@ local opt = vim.opt
 
 
 vim.cmd("set background=dark")
-vim.cmd('colorscheme tokyonight')
+vim.cmd("colorscheme kanagawa")
 opt.termguicolors=true
 
 

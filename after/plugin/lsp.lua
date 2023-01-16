@@ -8,7 +8,6 @@ end
 
 local lsp = require('lsp-zero')
 local cmp = require('cmp')
-local saga = require('lspsaga')
 
 lsp.preset('recommended')
 
@@ -29,8 +28,8 @@ local cmp_completion = {
 		keyword_length = 1,
 	}
 local cmp_mappings = {
-		['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-		['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<C-p>'] = cmp.mapping.select_prev_item(),
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
@@ -47,57 +46,17 @@ lsp.setup_nvim_cmp({
 })
 
 
---lspsaga
-saga.init_lsp_saga({
-	diagnostic_header = {
-		'✗',
-		'ѫ',
-		'ツ',
-		'Δ',
-	},
-	code_action_icon="ㄣ",
-	move_in_saga = {
-		prev = "<C-p>",
-		next="<C-n>"
-	},
-})
-
-local opts = {remap=false, silent=true}
-Map("n", "<leader>gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
--- Code action
-Map({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
--- Mass rename
-Map("n", "<localleader>gr", "<cmd>Lspsaga rename<CR>", opts)
--- Peek Definition
-Map("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)
-
--- Show line diagnostics
-Map("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-
--- Show cursor diagnostic
-Map("n", "<leader>sd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
-
--- Diagnsotic jump can use `<c-o>` to jump back
-Map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-Map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-
--- Only jump to error
-Map("n", "[E", function()
-	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-	end, opts)
-Map("n", "]E", function()
-	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-	end, opts)
-
--- Outline
-Map("n","<leader>o", "<cmd>LSoutlineToggle<CR>",opts)
-
--- Hover Doc
-Map("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", opts)
-
--- lsp.on_attach(function(client, bufnr)
---
--- end)
-
+lsp.on_attach(function(client, bufnr)
+local opts = {buffer = bufnr, remap=false, silent=true}
+	Map("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
+	Map("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
+	Map("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end , opts)
+	Map("n", "<leader>ca", function() vim.lsp.buf.code_action() end , opts)
+	Map("n", "<leader>d", function() vim.diagnostic.open_float() end, opts)
+	Map("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+	Map("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+	Map("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR}) end, opts)
+	Map("n", "[e", function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR}) end, opts)
+end)
 
 lsp.setup()

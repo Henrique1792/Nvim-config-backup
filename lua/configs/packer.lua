@@ -10,6 +10,7 @@ return require('packer').startup({ function(use)
 	use 'flazz/vim-colorschemes'
 	use 'rafi/awesome-vim-colorschemes'
 	use 'folke/tokyonight.nvim'
+	use 'rebelot/kanagawa.nvim'
 
 	-- tpope block
 	use 'tpope/vim-surround'
@@ -24,7 +25,7 @@ return require('packer').startup({ function(use)
 		-- optional for icon support
 		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
-
+	use { 'junegunn/fzf', run = './install --bin', }
 
 	-- undoTree
 	use {
@@ -77,19 +78,14 @@ return require('packer').startup({ function(use)
 		},
 	}
 
+	use {"kevinhwang91/nvim-bqf"}
+
 
 	-- null-ls
 	-- use 'jose-elias-alvarez/null-ls.nvim'
 	-- use 'jayp0521/mason-null-ls.nvim'
 
 
-	--lspsaga
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = function()
-		end,
-	})
 
 
 	-- tree-sitter

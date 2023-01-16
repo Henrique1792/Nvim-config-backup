@@ -10,6 +10,7 @@ local g = vim.g
 -- number and relative number
 opt.number = true
 opt.relativenumber = true
+opt.mouse=""
 
 -- etcs
 opt.encoding = "utf-8"
@@ -17,6 +18,7 @@ vim.api.nvim_exec('language en_US.UTF-8', true)
 opt.fixendofline = false
 opt.updatetime = 100
 opt.shortmess.append = "Ic"
+
 
 --leader and localleader
 g.mapleader = ' '

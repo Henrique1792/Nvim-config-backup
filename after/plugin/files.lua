@@ -13,6 +13,8 @@ Map('n','<leader>f',':FzfLua files<CR>',{noremap=true, silent=true})
 Map('n','<leader>?',':FzfLua live_grep<CR>',{noremap=true, silent=true})
 Map('n','<leader>/',':FzfLua grep_curbuf<CR>',{noremap=true, silent=true})
 Map('n','<S-q>',':FzfLua buffers<CR>',{noremap=true, silent=true})
+Map('n','<localleader>]','<cmd>FzfLua lsp_incoming_calls<CR>',{noremap=true, silent=true})
+Map('n','<localleader>[','<cmd>FzfLua lsp_outgoing_calls<CR>',{noremap=true, silent=true})
 
 
 -- undotree
