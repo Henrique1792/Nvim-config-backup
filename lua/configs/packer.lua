@@ -78,14 +78,20 @@ return require('packer').startup({ function(use)
 		},
 	}
 
+	-- buffers and registers 
 	use {"kevinhwang91/nvim-bqf"}
 
 
-	-- null-ls
-	-- use 'jose-elias-alvarez/null-ls.nvim'
-	-- use 'jayp0521/mason-null-ls.nvim'
-
-
+	use {
+		"tversteeg/registers.nvim",
+		config = function()
+			require("registers").setup({
+				window = {
+					transparency = 0,
+				},
+			})
+		end,
+	}
 
 
 	-- tree-sitter

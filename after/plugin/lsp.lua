@@ -1,4 +1,3 @@
-
 -- trying kindly to remove verbosing
 function Map(mode, sequence, command, params)
 	vim.keymap.set(mode, sequence, command, params)
@@ -56,7 +55,7 @@ local opts = {buffer = bufnr, remap=false, silent=true}
 	Map("n", "<localleader>ds", function() vim.lsp.buf.document_symbol() end, opts)
 
 	Map("n", "<localleader>q","<cmd>cexpr []<CR><cmd>echo 'qf clean!'<CR>" ,opts)
-	Map("n", "<localleader>co","<cmd>copen <CR>" ,opts)
+	Map("n", "<leader>co","<cmd>copen <CR>" ,opts)
 	Map("n", "<leader>]", function() vim.lsp.buf.incoming_calls() end, opts)
 	Map("n", "<leader>[", function() vim.diagnostic.outgoing_calls() end, opts)
 	Map("n", "]d", function() vim.diagnostic.goto_next() end, opts)

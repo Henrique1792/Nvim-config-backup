@@ -11,6 +11,7 @@ local g = vim.g
 opt.number = true
 opt.relativenumber = true
 opt.mouse=""
+opt.smd=false
 
 -- etcs
 opt.encoding = "utf-8"
