@@ -9,11 +9,25 @@ end
 vim.cmd('let g:nnn#layout = { \'left\': \'~20%\' }')
 
 -- fzf
-Map('n','<leader>f',':FzfLua files<CR>',{noremap=true, silent=true})
-Map('n','<leader>?',':FzfLua live_grep<CR>',{noremap=true, silent=true})
-Map('n','<leader>/',':FzfLua grep_curbuf<CR>',{noremap=true, silent=true})
-Map('n','<S-q>',':FzfLua buffers<CR>',{noremap=true, silent=true})
-Map('n','<leader>m','<cmd>FzfLua marks<CR>',{noremap=true, silent=true})
+
+local fzf = require('fzf-lua')
+
+fzf.setup {
+	previewers = {
+		man = {
+			cmd = "man %s | col -bx",
+		}
+	}
+}
+
+local fzf_cmd_opts={noremap=true, silent=true}
+Map('n','<leader>f',':FzfLua files<CR>',fzf_cmd_opts)
+Map('n','<leader>?',':FzfLua live_grep<CR>',fzf_cmd_opts)
+Map('n','<leader>/',':FzfLua lgrep_curbuf<CR>',fzf_cmd_opts)
+Map('n','<S-q>',':FzfLua buffers<CR>',fzf_cmd_opts)
+Map('n','<leader>M','<cmd>FzfLua marks<CR>',fzf_cmd_opts)
+Map('n','<leader>J','<cmd>FzfLua jumps<CR>',fzf_cmd_opts)
+Map('n','<F12>','<cmd>FzfLua man_pages<CR>',fzf_cmd_opts)
 
 
 -- undotree
