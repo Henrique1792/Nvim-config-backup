@@ -102,6 +102,12 @@ local plugins = {
 
 	-- tree-sitter
 	'nvim-treesitter/nvim-treesitter',
+
+	-- null-ls
+	{ 'jose-elias-alvarez/null-ls.nvim',
+		dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
+	},
+
 }
 
 local opts = {}
