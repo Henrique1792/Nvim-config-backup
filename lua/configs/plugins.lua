@@ -12,8 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-local plugins{
-	'wbthomason/packer.nvim',
+local plugins = {
 	-- aesthetics
 	-- lualine
 	{
@@ -37,7 +36,6 @@ local plugins{
 		-- optional for icon support
 		dependencies = { 'kyazdani42/nvim-web-devicons' },
 	},
-	{ 'junegunn/fzf', run = './install --bin', },
 
 	-- undoTree
 	{
@@ -61,7 +59,7 @@ local plugins{
 	'p00f/nvim-ts-rainbow',
 
 	-- nnn file management
-	'mcchrish/nnn.vim'
+	'mcchrish/nnn.vim',
 
 	-- lsp
 	{ 'VonHeikemen/lsp-zero.nvim',
@@ -87,7 +85,7 @@ local plugins{
 	},
 
 	-- buffers and registers 
-	{"kevinhwang91/nvim-bqf"},
+	"kevinhwang91/nvim-bqf",
 
 
 	{
@@ -103,8 +101,8 @@ local plugins{
 
 
 	-- tree-sitter
-	'nvim-treesitter/nvim-treesitter'
+	'nvim-treesitter/nvim-treesitter',
 }
 
-local opts ={}
+local opts = {}
 require("lazy").setup(plugins, opts)

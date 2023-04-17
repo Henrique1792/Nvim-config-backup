@@ -1,4 +1,4 @@
 require('configs.settings')
-require('configs.packer')
+require('configs.plugins')
 require('configs.utils')
 require('configs.maps')
