@@ -23,7 +23,6 @@ require 'nvim-treesitter.configs'.setup {
 		"gomod",
 		"bash",
 		"cpp",
-		"help",
 	},
 }
 
