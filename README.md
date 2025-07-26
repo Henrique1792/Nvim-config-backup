@@ -30,3 +30,11 @@ Pay attention for fzf and nnn versions, these might break if you do not compile 
 
 I'll tag latest vimscript based for further references.
 
+### 2024-06-14
+
+I'm gonna rewrite this. Many mason changes and the usage of lazy-nvim became 
+bad to maintain - I was too long away from my nvim (which is sad) - so I'm gonna get back in a cleaner way.
+
+### 2025-07-26
+Well - one year later and I didn't rewrite this; I'll rewrite this configuration and update this configuration
+(maybe adding a stow entry for dependencies? not sure).
