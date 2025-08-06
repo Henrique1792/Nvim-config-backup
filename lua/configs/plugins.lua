@@ -14,27 +14,34 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	-- aesthetics
-	-- lualine
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
-	},
-
 	'flazz/vim-colorschemes',
 	'rafi/awesome-vim-colorschemes',
 	'folke/tokyonight.nvim',
 	'rebelot/kanagawa.nvim',
 
+	-- lualine
+	 {
+	 	'nvim-lualine/lualine.nvim',
+	 	dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
+	 },
+
+
 	-- tpope block
 	 'tpope/vim-surround',
-	 'tpope/vim-fugitive',
 
 	--gitsigns
 	'lewis6991/gitsigns.nvim',
 
+	-- file navigation
 	{ 'ibhagwan/fzf-lua',
 		-- optional for icon support
 		dependencies = { 'kyazdani42/nvim-web-devicons' },
+	},
+
+	{
+    "ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" }
 	},
 
 	-- undoTree
@@ -49,45 +56,21 @@ local plugins = {
 	-- LineDiff
 	'AndrewRadev/linediff.vim',
 
-
-
 	-- markdown note support
 	 'shime/vim-livedown',
 	 'vimwiki/vimwiki',
 
-	-- color matching brackets/...
-	'p00f/nvim-ts-rainbow',
-
-	-- nnn file management
-	'mcchrish/nnn.vim',
-
-	-- lsp
-	{ 'VonHeikemen/lsp-zero.nvim',
-		dependencies = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},
-		{'williamboman/mason.nvim'},
-		{'williamboman/mason-lspconfig.nvim'},
-
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},
-		{'hrsh7th/cmp-buffer'},
-		{'hrsh7th/cmp-path'},
-		{'saadparwaiz1/cmp_luasnip'},
-		{'hrsh7th/cmp-nvim-lsp'},
-		{'hrsh7th/cmp-nvim-lua'},
-
-		-- Snippets
-		{'L3MON4D3/LuaSnip'},
-		-- Snippet Collection (Optional)
-		{'rafamadriz/friendly-snippets'},
-		},
-	},
-
 	-- buffers and registers 
 	"kevinhwang91/nvim-bqf",
 
-
+	-- file manager
+	{
+		'stevearc/oil.nvim',
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "nvim-tree/nvim-web-devicons" , opts = {} } },
+		lazy = false,
+	},
 	{
 		"tversteeg/registers.nvim",
 		config = function()
@@ -99,14 +82,8 @@ local plugins = {
 		end,
 	},
 
-
 	-- tree-sitter
 	'nvim-treesitter/nvim-treesitter',
-
-	-- null-ls
-	{ 'jose-elias-alvarez/null-ls.nvim',
-		dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
-	},
 
 }
 
