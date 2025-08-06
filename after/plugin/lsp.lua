@@ -3,10 +3,6 @@ function Map(mode, sequence, command, params)
 	vim.keymap.set(mode, sequence, command, params)
 end
 
-
---vim.lsp.config['tsserver'] = {}
---vim.lsp.enable('tsserver')
-
 vim.lsp.config['gopls'] = {
 	cmd = { 'gopls' },
 	filetypes = { 'go', 'gomod', 'gowork', 'tmpl' },

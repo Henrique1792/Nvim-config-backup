@@ -1,5 +1,5 @@
-
-require 'nvim-treesitter.configs'.setup {
+local treesitter = require('nvim-treesitter.configs')
+treesitter.setup {
 	rainbow = {
 		enable = true,
 		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
@@ -23,6 +23,7 @@ require 'nvim-treesitter.configs'.setup {
 		"gomod",
 		"bash",
 		"cpp",
+		"lua",
 	},
 }
 
