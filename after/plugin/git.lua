@@ -7,7 +7,8 @@ function Map(mode, sequence, command, params)
 end
 
 --gitsigns
-require('gitsigns').setup{
+local gitsigns = require('gitsigns')
+gitsigns.setup{
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
 
@@ -34,6 +35,7 @@ require('gitsigns').setup{
 		map('n', '<leader>H', gs.preview_hunk)
 		map('n', '<F5>', '<cmd>Gitsigns diffthis<CR><C-[><C-W>l')
 		map('n', '<localleader><F12>', gs.toggle_current_line_blame)
+		Map('n', '<leader><F12>', gs.blame,{noremap=true})
 
 		-- map({'n', 'v'}, '<localleader>hs', ':Gitsigns stage_hunk<CR>')
 		-- map({'n', 'v'}, '<localleader>hr', ':Gitsigns reset_hunk<CR>')
@@ -52,5 +54,3 @@ require('gitsigns').setup{
 --fzf related maps
 Map('n', '<F8>', '<cmd>FzfLua git_bcommits<CR>',{noremap=true})
 Map('n', '<F9>', '<cmd>FzfLua git_commits<CR>',{noremap=true})
-Map('n', '<leader><F12>', '<cmd>Git blame<CR>',{noremap=true})
-

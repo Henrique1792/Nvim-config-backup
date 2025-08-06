@@ -5,11 +5,19 @@ function Map(mode, sequence, command, params)
 	keymap.set(mode, sequence, command, params)
 end
 
--- nnn
-vim.cmd('let g:nnn#layout = { \'left\': \'~20%\' }')
+-- 
+local oil = require("oil")
+oil.setup({
+	default_file_explorer = true,
+	columns = {
+		"icon",
+		"permissions",
+		"size",
+	},
+})
+Map('n','<localleader>f','<cmd>Oil<CR>',nil)
 
 -- fzf
-
 local fzf = require('fzf-lua')
 
 fzf.setup {
@@ -28,13 +36,30 @@ Map('n','<S-q>',':FzfLua buffers<CR>',fzf_cmd_opts)
 Map('n','<leader>M','<cmd>FzfLua marks<CR>',fzf_cmd_opts)
 Map('n','<leader>J','<cmd>FzfLua jumps<CR>',fzf_cmd_opts)
 Map('n','<F12>','<cmd>FzfLua man_pages<CR>',fzf_cmd_opts)
-
+Map('n','<localleader>D','<cmd>FzfLua diagnostics_document<CR>',fzf_cmd_opts)
 
 -- undotree
-require('undotree').setup()
+local undotree = require('undotree')
+undotree.setup()
 Map('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true })
 
 
+
+-- harpoon
+
+local harpoon = require('harpoon')
+harpoon.setup()
+
+Map("n", "<leader>a", function() harpoon:list():add() end)
+Map("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+Map("n", "<leader>1", function() harpoon:list():select(1) end)
+Map("n", "<leader>2", function() harpoon:list():select(2) end)
+Map("n", "<leader>3", function() harpoon:list():select(3) end)
+Map("n", "<leader>4", function() harpoon:list():select(4) end)
+
+Map("n", "<localleader>p", function() harpoon:list():prev() end)
+Map("n", "<localleader>n", function() harpoon:list():next() end)
 
 
 -- watch file changes lazy stuff

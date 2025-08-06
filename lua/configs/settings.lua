@@ -13,9 +13,10 @@ opt.relativenumber = true
 opt.mouse=""
 opt.smd=false
 
+
 -- etcs
 opt.encoding = "utf-8"
-vim.api.nvim_exec('language en_US.UTF-8', true)
+vim.api.nvim_exec2('language en_US.UTF-8', {output=true})
 opt.fixendofline = false
 opt.updatetime = 100
 opt.shortmess.append = "Ic"
@@ -52,3 +53,9 @@ opt.wildoptions.append = 'pum'
 -- foldmethod
 opt.foldmethod = "indent"
 opt.foldlevel = 99
+
+-- window
+opt.winborder = 'rounded'
+
+-- Preview substitutions
+vim.opt.inccommand = 'split'

@@ -11,7 +11,6 @@ function Map(mode, sequence, command, params)
 end
 
 Map('n','<leader>ev',':vsplit $MYVIMRC<CR>',{noremap=true, silent=true})
-Map('n','<leader>sv',':so $MYVIMRC<CR>',{noremap=true, silent=true})
 
 Map('n','<localleader>i','<C-[>:bn<CR>',{noremap=true, silent=true})
 Map('n','<localleader>o','<C-[>:bp<CR>',{noremap=true, silent=true})
@@ -25,9 +24,10 @@ Map('n','<F2>',':tabnew<CR>',{silent=true})
 Map('n','<F4>',':tabclose<CR>',{silent=true})
 Map('n','<F6>',':only!<CR>',{noremap=true, silent=true})
 Map('n','<F7>',':let @+=@%<CR><C-[>:let @*=@%<CR>',{noremap=true,silent=true})
+
 Map('n','<leader><F7>','<cmd>let @+=expand("%:h:p")<CR><C-[><cmd>let @*=expand("%:h:p")<CR>',{noremap=true,silent=true})
 
-Map('n','<leader>q',':<C-W>q<CR>',{silent=true})
+Map('n','<localleader>q',':<C-W>q<CR>',{silent=true})
 Map('n','<leader>\\',':vsplit<CR><C-[><C-W>l',{silent=true})
 Map('n','<leader>-',':split<CR><C-[><C-W>j',{silent=true})
 
@@ -50,6 +50,10 @@ Map('n','<leader>=','<C-W>=',{silent=true, noremap=true})
 vim.cmd('command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor')
 vim.cmd('nnoremap <silent><leader>y :let @+=getreg(\'\"\')<CR><C-[>:let @*=getreg(\'\"\')<CR>:echo \"yank!\"<CR>')
 vim.cmd('nnoremap <silent><leader>p :let @"=getreg(\'*\')<CR><C-[>:let @q=getreg(\'+\')<CR>:echo \"paste ready!\"<CR>')
+
+
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 
 -- toggle mapping setup for the following motions
 vim.cmd('\
