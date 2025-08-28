@@ -27,9 +27,23 @@ vim.lsp.config['clangd'] = {
 vim.lsp.enable('clangd')
 
 vim.lsp.config['bashls'] = {
-	cmd = {'bash-language-server'},
+	cmd = {"bash-language-server", "start"},
+	filetypes = {"bash", "sh"}
 }
 vim.lsp.enable('bashls')
+
+
+
+vim.lsp.config['rust'] = {
+	cmd = { 'rust-analyzer'},
+	filetypes = { 'rust' },
+	root_markers = { 'Cargo.toml', '.git' },
+	settings = {
+
+	}
+}
+vim.lsp.enable('rust')
+
 
 vim.lsp.config['luals'] = {
 	cmd = { 'lua-language-server'},
@@ -51,7 +65,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
       vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-      vim.keymap.set('i', '<C-Space>', function()
+      Map('i', '<C-Space>', function()
         vim.lsp.completion.get()
       end)
     end

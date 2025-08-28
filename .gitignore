@@ -4,3 +4,4 @@ wiki.vim
 plugin/packer_compiled.lua
 tags
 .luarc.json
+lazy-lock.json
