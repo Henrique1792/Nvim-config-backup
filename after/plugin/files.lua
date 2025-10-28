@@ -9,6 +9,7 @@ end
 local oil = require("oil")
 oil.setup({
 	default_file_explorer = true,
+	delete_to_trash = true,
 	columns = {
 		"icon",
 		"permissions",
@@ -43,23 +44,6 @@ local undotree = require('undotree')
 undotree.setup()
 Map('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true })
 
-
-
--- harpoon
-
-local harpoon = require('harpoon')
-harpoon.setup()
-
-Map("n", "<leader>a", function() harpoon:list():add() end)
-Map("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-Map("n", "<leader>1", function() harpoon:list():select(1) end)
-Map("n", "<leader>2", function() harpoon:list():select(2) end)
-Map("n", "<leader>3", function() harpoon:list():select(3) end)
-Map("n", "<leader>4", function() harpoon:list():select(4) end)
-
-Map("n", "<localleader>p", function() harpoon:list():prev() end)
-Map("n", "<localleader>n", function() harpoon:list():next() end)
 
 
 -- watch file changes lazy stuff

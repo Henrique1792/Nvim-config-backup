@@ -17,10 +17,6 @@ opt.ignorecase = true
 opt.smartcase = true
 
 
--- complete options for Saga =)
-opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
-
-
 --linewrap
 -- opt.wrap=false
 

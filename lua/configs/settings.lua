@@ -51,7 +51,7 @@ opt.wildignore = { '*.swp', '*.bak', '*.pyc', '*.class', '*.o' }
 opt.wildoptions.append = 'pum'
 
 -- foldmethod
-opt.foldmethod = "indent"
+opt.foldmethod = 'indent'
 opt.foldlevel = 99
 
 -- window

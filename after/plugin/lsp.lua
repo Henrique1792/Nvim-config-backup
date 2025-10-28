@@ -38,9 +38,8 @@ vim.lsp.config['rust'] = {
 	cmd = { 'rust-analyzer'},
 	filetypes = { 'rust' },
 	root_markers = { 'Cargo.toml', '.git' },
-	settings = {
-
-	}
+    settings = {
+    }
 }
 vim.lsp.enable('rust')
 
@@ -58,23 +57,34 @@ vim.lsp.config['luals'] = {
 	}
 }
 vim.lsp.enable('luals')
+vim.o.completeopt = 'menuone,noselect,fuzzy,nosort'
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-      vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-      Map('i', '<C-Space>', function()
-        vim.lsp.completion.get()
-      end)
-    end
-  end,
+local miniCompletion = require('mini.completion')
+miniCompletion.setup({
+	delay = { completion = 100, info = 100, signature = 50 },
+	signature = { enabled = true },
+	completion = {
+		documentation = { auto_show = true, auto_show_delay_ms = 500 },
+		menu = {
+			auto_show = true,
+			draw = {
+				treesitter = { "lsp" },
+				columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } },
+			},
+		},
+	},
+	window = {
+		info = {border = 'single'},
+		signature = {border = 'single'},
+	},
+
+	mappings = {
+		force_twostep = '<C-Space>',
+		force_fallback = '<A-Space>',
+	},
 })
 
--- Diagnostics
 vim.diagnostic.config({
   -- Use the default configuration
   virtual_lines = true
 })
-

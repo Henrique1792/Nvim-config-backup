@@ -4,7 +4,7 @@ local opt = vim.opt
 
 
 vim.cmd("set background=dark")
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme kanagawa-dragon")
 opt.termguicolors=true
 
 

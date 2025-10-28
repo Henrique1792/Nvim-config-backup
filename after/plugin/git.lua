@@ -32,9 +32,9 @@ gitsigns.setup{
 		end, {expr=true})
 
 		-- Actions
-		map('n', '<leader>H', gs.preview_hunk)
-		map('n', '<F5>', '<cmd>Gitsigns diffthis<CR><C-[><C-W>l')
-		map('n', '<localleader><F12>', gs.toggle_current_line_blame)
+		Map('n', '<leader>H', gs.preview_hunk)
+		Map('n', '<F5>', gs.diffthis)
+		Map('n', '<localleader><F12>', gs.toggle_current_line_blame)
 		Map('n', '<leader><F12>', gs.blame,{noremap=true})
 
 		-- map({'n', 'v'}, '<localleader>hs', ':Gitsigns stage_hunk<CR>')
@@ -42,7 +42,6 @@ gitsigns.setup{
 		-- map('n', '<localleader>hS', gs.stage_buffer)
 		-- map('n', '<localleader>hu', gs.undo_stage_hunk)
 		-- map('n', '<localleader>hR', gs.reset_buffer)
-		-- map('n', '<localleader>hd', gs.diffthis)
 		-- map('n', '<localleader>hD', function() gs.diffthis('~') end)
 
 	end,
