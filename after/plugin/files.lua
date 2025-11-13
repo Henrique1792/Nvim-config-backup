@@ -50,4 +50,3 @@ Map('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = tru
 vim.cmd('command! -bang WatchForChanges                  :call WatchForChanges(@%,  {\'toggle\': 1, \'autoread\': <bang>0})')
 vim.cmd('command! -bang WatchForChangesWhileInThisBuffer :call WatchForChanges(@%,  {\'toggle\': 1, \'autoread\': <bang>0, \'while_in_this_buffer_only\': 1})')
 vim.cmd('command! -bang WatchForChangesAllFile :call WatchForChanges(\'*\', {\'toggle\': 1, \'autoread\': <bang>0})')
-

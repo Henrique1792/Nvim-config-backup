@@ -56,6 +56,7 @@ opt.foldlevel = 99
 
 -- window
 opt.winborder = 'rounded'
+vim.cmd('filetype plugin on')
 
 -- Preview substitutions
 vim.opt.inccommand = 'split'

@@ -82,7 +82,12 @@ local plugins = {
 					require("mini.icons").tweak_lsp_kind()
 				end,
 			},
-			'nvim-mini/mini.snippets',
+			{
+				'nvim-mini/mini.snippets',
+				config = function()
+					require('mini.snippets').setup()
+				end,
+			},
 		},
 	},
 	{ 'nvim-mini/mini.surround',
@@ -90,13 +95,11 @@ local plugins = {
 		config = function()
 			require("mini.surround").setup({
 				mappings = {
-					add = 'as', -- Add surrounding in Normal and Visual modes
+					add = 'ys', -- Add surrounding in Normal and Visual modes
 					delete = 'ds', -- Delete surrounding
 					find = 'fs', -- Find surrounding (to the right)
 					find_left = 'Fs', -- Find surrounding (to the left)
-					highlight = 'hs', -- Highlight surrounding
 					replace = 'rs', -- Replace surrounding
-
 					suffix_last = 'l', -- Suffix to search with "prev" method
 					suffix_next = 'n', -- Suffix to search with "next" method
 				},
@@ -108,6 +111,19 @@ local plugins = {
 		config = function()
 			require("mini.pairs").setup()
 		end
+	},
+	{
+		'gorbit99/codewindow.nvim',
+		config = function()
+			require('codewindow').setup({
+				auto_enable = true,
+				max_lines = 10000,
+				use_git = true,
+				use_lsp = true,
+				use_treesitter = true
+			})
+			require('codewindow').apply_default_keybinds()
+		end,
 	},
 	-- tree-sitter
 	'nvim-treesitter/nvim-treesitter',
