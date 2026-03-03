@@ -112,19 +112,6 @@ local plugins = {
 			require("mini.pairs").setup()
 		end
 	},
-	{
-		'gorbit99/codewindow.nvim',
-		config = function()
-			require('codewindow').setup({
-				auto_enable = true,
-				max_lines = 10000,
-				use_git = true,
-				use_lsp = true,
-				use_treesitter = true
-			})
-			require('codewindow').apply_default_keybinds()
-		end,
-	},
 	-- tree-sitter
 	'nvim-treesitter/nvim-treesitter',
 }
