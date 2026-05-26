@@ -5,15 +5,6 @@ function Map(mode, sequence, command, params)
 	keymap.set(mode, sequence, command, params)
 end
 
--- 
-
-local miniFile = require("mini.files")
-
-Map('n', '<localleader>-', function()
-	miniFile.open()
-	end
-)
-
 -- fzf
 local fzf = require('fzf-lua')
 
