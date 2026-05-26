@@ -6,17 +6,13 @@ function Map(mode, sequence, command, params)
 end
 
 -- 
-local oil = require("oil")
-oil.setup({
-	default_file_explorer = true,
-	delete_to_trash = true,
-	columns = {
-		"icon",
-		"permissions",
-		"size",
-	},
-})
-Map('n','<localleader>f','<cmd>Oil<CR>',nil)
+
+local miniFile = require("mini.files")
+
+Map('n', '<localleader>-', function()
+	miniFile.open()
+	end
+)
 
 -- fzf
 local fzf = require('fzf-lua')

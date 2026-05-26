@@ -33,8 +33,6 @@ vim.lsp.config['bashls'] = {
 }
 vim.lsp.enable('bashls')
 
-
-
 vim.lsp.config['rust'] = {
 	cmd = { 'rust-analyzer'},
 	filetypes = { 'rust' },
@@ -44,6 +42,14 @@ vim.lsp.config['rust'] = {
 }
 vim.lsp.enable('rust')
 
+vim.lsp.config['make_ls'] = {
+	cmd = { 'make-ls'},
+	filetypes = { 'make' },
+	root_markers = { 'Makefie', '.git' },
+    settings = {
+    }
+}
+vim.lsp.enable('make_ls')
 
 vim.lsp.config['luals'] = {
 	cmd = { 'lua-language-server'},

@@ -53,7 +53,7 @@ local plugins = {
 	-- buffers and registers 
 	"kevinhwang91/nvim-bqf",
 	{
-		"tversteeg/registers.nvim",
+		"https://codeberg.org/fosk/registers.nvim",
 		config = function()
 			require("registers").setup({
 				window = {
@@ -61,15 +61,6 @@ local plugins = {
 				},
 			})
 		end,
-	},
-
-	-- file manager
-	{
-		'stevearc/oil.nvim',
-		opts = {},
-		-- Optional dependencies
-		dependencies = { { "nvim-tree/nvim-web-devicons" , opts = {} } },
-		lazy = false,
 	},
 	-- mini block
 	{ 'nvim-mini/mini.completion',
@@ -99,9 +90,9 @@ local plugins = {
 					delete = 'ds', -- Delete surrounding
 					find = 'fs', -- Find surrounding (to the right)
 					find_left = 'Fs', -- Find surrounding (to the left)
-					replace = 'rs', -- Replace surrounding
-					suffix_last = 'l', -- Suffix to search with "prev" method
-					suffix_next = 'n', -- Suffix to search with "next" method
+					replace = 'Rs', -- Replace surrounding
+					suffix_last = 'SL', -- Suffix to search with "prev" method
+					suffix_next = 'SN', -- Suffix to search with "next" method
 				},
 			})
 		end
